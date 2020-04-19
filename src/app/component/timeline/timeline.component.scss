@@ -1,0 +1,57 @@
+.scroll {
+  overflow: auto;
+}
+
+.timeline {
+  width: 786px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.segment {
+  height: 40px;
+  font-size: 14px;
+
+  &:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+
+  &:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+}
+
+.hour {
+  width: 8.33333%;
+  text-align: center;
+
+  &:first-child {
+    width: 4.16667%;
+    text-align: left;
+  }
+}
+.temp {
+  width: 8.33333%;
+  text-align: center;
+
+  &:first-child {
+    width: 4.16667%;
+    text-align: left;
+  }
+}
+
+.line {
+  width: 4.16667%;
+
+  &:nth-child(odd) {
+    height: 8px;
+    border-left: 1px solid #999;
+  }
+  &:nth-child(even) {
+    height: 4px;
+    border-left: 1px solid #999;
+  }
+  &:first-child {
+    height: 4px;
+  }
+}

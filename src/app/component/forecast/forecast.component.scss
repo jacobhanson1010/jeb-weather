@@ -1,7 +1,9 @@
-.weather-code-icon {
-  //width: 45px;
-  //height: 45px;
-  width: 10%;
+.weather-code-div {
+  width: 85px;
+}
+.icon {
+  width: 40px;
+  height: 40px;
 }
 
 .day {
@@ -19,17 +21,24 @@
   font-size: 16px;
 }
 
+.range {
+  width: calc(90% - 156px);
+}
 .bar {
   height: 18px;
 }
 
+.spacer {
+  margin-right: -52px;
+}
 .low {
   margin-right: 7px;
   width: 45px;
   text-align: right;
 }
 .high {
-  padding-left: 7px;
+  margin-left: 7px;
+  margin-right: -52px;
   width: 45px;
   text-align: left;
 }

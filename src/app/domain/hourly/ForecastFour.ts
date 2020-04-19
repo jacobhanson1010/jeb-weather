@@ -1,7 +1,7 @@
-import {ForecastHour} from "./ForecastHour";
-import {ForecastDay} from "./ForecastDay";
+import {ForecastHour} from './ForecastHour';
+import {ForecastDay} from './ForecastDay';
 
-export class HourlyForecastFour {
+export class ForecastFour {
 
   days: ForecastDay[] = [];
 

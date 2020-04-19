@@ -1,4 +1,6 @@
 import {ValueUnitPair} from "../ValueUnitPair";
+import {Attributes} from '../Segments';
+import {lookupWeatherCodeIcon} from '../WeatherCodeLookup';
 
 class MinMaxObservation {
   observation_time: string;
@@ -38,6 +40,7 @@ export class ForecastDaily {
   date: Date;
   lat: number;
   lon: number;
+  icon: string;
 
   constructor(obj?: any) {
     Object.assign(this, obj);
@@ -55,6 +58,8 @@ export class ForecastDaily {
     this.wind_speed_max = this.mmoToVuoMax(this.wind_speed);
     this.wind_direction_min = this.mmoToVuoMin(this.wind_direction);
     this.wind_direction_max = this.mmoToVuoMax(this.wind_direction);
+
+    this.icon = lookupWeatherCodeIcon.get(this.weather_code.value);
   }
 
   private mmoToVuoMin(mmo: MinMaxObservation[]): ValueUnitObservation {

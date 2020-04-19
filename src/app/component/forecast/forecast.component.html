@@ -1,23 +1,25 @@
 <div class="container-md">
-  <div class="row day" *ngFor="let forecastDay of forecast.days">
+  <div class="row day" *ngFor="let forecastDay of forecast.days; let i = index;">
     <div class="col d-flex justify-content-between align-items-center">
       <!--      <span class="weather-code-icon">-->
       <!--        <img src="assets/weather_code/clear.png" class="w-100 h-100">-->
       <!--      </span>-->
-      <div>
-        <div class="weather-code-icon">{{forecastDay.weather_code.value}}</div>
-        <div>{{getDayOfWeek(forecastDay.date.getUTCDay())}}</div>
+      <div class="weather-code-div d-flex align-items-center">
+<!--        <div class="weather-code-icon">{{forecastDay.weather_code.value}}</div>-->
+        <img class="icon" [src]="'assets/weather_code/'+forecastDay.icon+'.svg'"/>
+        <div class="pl-1">{{getDayOfWeek(forecastDay.date.getUTCDay())}}</div>
       </div>
 
-      <div class="w-75 d-flex justify-content-start align-items-center">
-        <div [style.width.%]="((forecastDay.temp_min.vup.value - forecast.low) / (forecast.high - forecast.low)) * 100"></div>
+      <div class="range d-flex justify-content-start align-items-center">
+        <div class="spacer" [style.width.%]="((forecastDay.temp_min.vup.value - forecast.low) / (forecast.high - forecast.low)) * 100"></div>
         <div class="low">{{forecastDay.temp_min.vup.value | number: '0.1-1'}}&deg;</div>
-        <div class="rounded bg-dark bar"
-             [style]="{'width': 'calc('+ (((forecastDay.temp_max.vup.value - forecast.low) / (forecast.high - forecast.low) - (forecastDay.temp_min.vup.value - forecast.low) / (forecast.high - forecast.low)) * 100) +'% - 90px)'}"></div>
+        <div class="rounded bg-dark bar justify-content-between align-items-center"
+             [style]="{'width': 'calc('+ (((forecastDay.temp_max.vup.value - forecast.low) / (forecast.high - forecast.low) - (forecastDay.temp_min.vup.value - forecast.low) / (forecast.high - forecast.low)) * 100) +'%)'}">
+        </div>
         <div class="high">{{forecastDay.temp_max.vup.value | number: '0.1-1'}}&deg;</div>
       </div>
 
-      <div class="bg-dark text-white rounded expand-button text-center">+</div>
+      <div [style.visibility]="i < 4 ? 'visible' : 'hidden'" class="bg-dark text-white rounded expand-button text-center">&#9660;</div>
     </div>
   </div>
 </div>

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ClimacellService} from "../service/climacell.service";
-import {HourlyForecastFour} from "../../domain/hourly/HourlyForecastFour";
-import {WeeklyForecast} from "../../domain/daily/WeeklyForecast";
-import {WeekDay} from "@angular/common";
+import {ClimacellService} from '../../service/climacell.service';
+import {WeeklyForecast} from '../../domain/daily/WeeklyForecast';
+import {WeekDay} from '@angular/common';
 
 @Component({
   selector: 'app-forecast',
@@ -19,7 +18,7 @@ export class ForecastComponent implements OnInit {
   ngOnInit(): void {
     this.climacell.dailyForecast.subscribe(f => {
       this.forecast = f;
-      console.info("forecast component got the forecast", this.forecast);
+      console.info('forecast component got the forecast', this.forecast);
     });
   }
 
