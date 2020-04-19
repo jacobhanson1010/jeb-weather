@@ -8,7 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build": "ng build --prod --base-href \"https://weather.jebhanson.com/\"",
-    "deploy": "angular-cli-ghpages --branch master"
+    "deploy": "angular-cli-ghpages --branch master --cname weather.jebhanson.com --dir dist/jeb-weather"
   },
   "private": true,
   "dependencies": {
