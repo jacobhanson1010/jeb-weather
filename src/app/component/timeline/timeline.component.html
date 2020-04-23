@@ -21,7 +21,7 @@
           <div class="pt-1 w-100 d-flex justify-content-start align-items-start">
             <ng-container *ngFor="let hour of hours; let i = index;">
               <div class="hour" *ngIf="i % 2 == 0 && i != 0">
-                {{hour.observation_date.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+                {{hour?.observation_date.toLocaleString('en-US', { hour: 'numeric', hour12: true })
                   .replace(' ', '')
                   .toLocaleLowerCase()}}
               </div>

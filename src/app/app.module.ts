@@ -8,6 +8,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { ForecastComponent } from './component/forecast/forecast.component';
 import { TimelineComponent } from './component/timeline/timeline.component';
 import { TitleComponent } from './component/title/title.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { DetailComponent } from './component/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { TitleComponent } from './component/title/title.component';
     HeaderComponent,
     ForecastComponent,
     TimelineComponent,
-    TitleComponent
+    TitleComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
 

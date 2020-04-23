@@ -41,6 +41,7 @@ export class ForecastDaily {
   lat: number;
   lon: number;
   icon: string;
+  collapsed = true;
 
   constructor(obj?: any) {
     Object.assign(this, obj);

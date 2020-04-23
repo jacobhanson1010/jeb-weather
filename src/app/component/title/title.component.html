@@ -2,14 +2,13 @@
   <div class="d-flex justify-content-center align-items-center">
     <img width=84 height=84 *ngIf="now" [src]="'assets/weather_code/'+now.icon+'.svg'">
     <div class="pl-2 d-flex flex-column justify-content-center">
-      <div class="d-flex align-items-end flex-wrap">
-        <span class="deg">{{now?.temp.value | number: '0.0-0'}}&deg;&nbsp;</span>
-        <span class="condition">{{now?.segmentAttributes?.label}}</span>
+      <div class="d-flex align-items-end">
+        <div class="deg">{{now?.temp.value | number: '0.0-0'}}&deg;&nbsp;</div>
+        <div class="condition">{{now?.segmentAttributes?.label}}</div>
       </div>
-      <div class="details">
-        Feels Like: <b>{{now?.feels_like.value | number: '0.1-1'}}&deg;</b>
-        Low: <b>{{today?.temp_min.vup.value | number: '0.1-1'}}&deg;</b>
-        High: <b>{{today?.temp_max.vup.value | number: '0.1-1'}}&deg;</b>
+      <div class="details d-flex flex-column">
+        <div>Feels Like:&nbsp;<b>{{now?.feels_like.value | number: '0.1-1'}}&deg;</b></div>
+        <div>Low:&nbsp;<b>{{today?.temp_min.vup.value | number: '0.1-1'}}&deg;&nbsp;</b>High:&nbsp;<b>{{today?.temp_max.vup.value | number: '0.1-1'}}&deg;</b></div>
       </div>
     </div>
   </div>

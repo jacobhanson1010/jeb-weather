@@ -81,16 +81,13 @@ export class ClimacellService {
 
   private retrieveHourly() {
     this.http.get('https://api.climacell.co/v3/weather/forecast/hourly?' +
-      'lat=33.063190&' +
-      'lon=-96.725220&' +
-      'unit_system=us&' +
-      'fields=temp,feels_like,wind_speed,wind_gust,wind_direction,sunrise,sunset,cloud_cover,weather_code&' +
-      'start_time=now', this.headers())
-      .pipe(
-        take(96)
-      ).subscribe((fc: any[]) => {
-        const forecast = fc.map(f => new ForecastHour(f));
-        this.hourlyForecast.next(new ForecastFour(forecast));
+      'lat=' + this.coords.latitude +
+      '&lon=' + this.coords.longitude +
+      '&unit_system=us' +
+      '&fields=temp,feels_like,wind_speed,wind_gust,wind_direction,sunrise,sunset,cloud_cover,weather_code' +
+      '&start_time=now', this.headers())
+      .subscribe((fc: any[]) => {
+        this.hourlyForecast.next(new ForecastFour(fc.slice(0, 96).map(f => new ForecastHour(f))));
       },
       (error: HttpErrorResponse) => {
         console.error(error);
@@ -103,23 +100,23 @@ export class ClimacellService {
 
   private retrieveDaily() {
     this.http.get('https://api.climacell.co/v3/weather/forecast/daily?' +
-      'lat=33.063190&' +
-      'lon=-96.725220&' +
-      'unit_system=us&' +
-      'fields=sunrise,sunset,temp,feels_like,wind_speed,wind_direction,' +
-      'precipitation,precipitation_accumulation,precipitation_probability,weather_code&' +
-      'start_time=now', this.headers())
+      'lat=' + this.coords.latitude +
+      '&lon=' + this.coords.longitude +
+      '&unit_system=us' +
+      '&fields=sunrise,sunset,temp,feels_like,wind_speed,wind_direction,' +
+        'precipitation,precipitation_accumulation,precipitation_probability,weather_code' +
+      '&start_time=now', this.headers())
       .subscribe((fc: any[]) => {
-          const forecast = fc.map(f => new ForecastDaily(f));
+          let forecast = fc.map(f => new ForecastDaily(f));
           let extraDays = 0;
-          forecast.forEach(f => {
-            if (f.date < new Date()) {
+          for (let f of forecast) {
+            if (f.date.getUTCDate() != (new Date()).getDate()) {
               extraDays++;
+            } else {
+              break;
             }
-          });
-          for (let n = 0; n < extraDays - 1; n++) {
-            forecast.shift();
           }
+          forecast = forecast.slice(extraDays);
           this.dailyForecast.next(new WeeklyForecast(forecast));
         },
         (error: HttpErrorResponse) => {

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex align-items-center flex-column w-75">
+        <ng-container *ngFor="let hour of hours; let i = index;">
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="weather-code text-right mr-3" [style.visibility]="(i > 0 && hours[i].segmentAttributes.label == hours[i-1].segmentAttributes.label) ? 'hidden' : 'visible'">
+              {{hour.segmentAttributes.label}}
+            </div>
+            <div class="bar" [style.background-color]="hour.segmentAttributes.color"></div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

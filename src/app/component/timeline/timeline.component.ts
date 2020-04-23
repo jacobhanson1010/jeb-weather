@@ -11,7 +11,7 @@ import {ForecastHour} from '../../domain/hourly/ForecastHour';
 })
 export class TimelineComponent implements OnInit {
 
-  hours: ForecastHour[]; // first 24 hours
+  hours: ForecastHour[] = []; // first 24 hours
   segments: Segments = new Segments();
 
   constructor(private climacell: ClimacellService) {
@@ -19,9 +19,9 @@ export class TimelineComponent implements OnInit {
 
   ngOnInit(): void {
     this.climacell.hourlyForecast.subscribe(hf => {
-      this.hours = hf.days[0].hours;
-      this.segments = new Segments(this.hours);
+      this.hours = hf.hours.slice(0, 24);
       console.debug("timeline component got timeline", this.hours);
+      this.segments = new Segments(this.hours);
       console.debug("segments", this.segments);
     });
   }
