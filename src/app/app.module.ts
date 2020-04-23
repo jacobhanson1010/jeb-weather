@@ -10,6 +10,8 @@ import { TimelineComponent } from './component/timeline/timeline.component';
 import { TitleComponent } from './component/title/title.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DetailComponent } from './component/detail/detail.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DetailComponent } from './component/detail/detail.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [
 

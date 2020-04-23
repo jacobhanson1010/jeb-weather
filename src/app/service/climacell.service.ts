@@ -84,7 +84,7 @@ export class ClimacellService {
       'lat=' + this.coords.latitude +
       '&lon=' + this.coords.longitude +
       '&unit_system=us' +
-      '&fields=temp,feels_like,wind_speed,wind_gust,wind_direction,sunrise,sunset,cloud_cover,weather_code' +
+      '&fields=temp,feels_like,precipitation_type,precipitation,precipitation_probability,wind_speed,wind_gust,wind_direction,sunrise,sunset,cloud_cover,weather_code' +
       '&start_time=now', this.headers())
       .subscribe((fc: any[]) => {
         this.hourlyForecast.next(new ForecastFour(fc.slice(0, 96).map(f => new ForecastHour(f))));
