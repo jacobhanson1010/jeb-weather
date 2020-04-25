@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {ForecastHour} from '../../domain/hourly/ForecastHour';
 import {Segments} from '../../domain/Segments';
 import {ClimacellService} from '../../service/climacell.service';
@@ -65,5 +65,28 @@ export class DetailComponent implements OnInit {
       });
       return fieldsForHour;
     });
+  }
+
+  getSpacerWidth(displayedVup: ValueUnitPair): number {
+    if (!this.selectedField) {
+      return 0;
+    }
+
+    if (displayedVup.units == '%') {
+      return displayedVup.value;
+    }
+
+    let maxForField = Math.max(...this.getSelectedFields().map((vup: ValueUnitPair[]) => {
+      return vup[0].value;
+    }));
+    let minForField = Math.min(...this.getSelectedFields().map((vup: ValueUnitPair[]) => {
+      return vup[0].value;
+    }));
+
+    if (maxForField == 0) {
+      return 0;
+    }
+
+    return (displayedVup.value - minForField) / (maxForField - minForField) * 100;
   }
 }

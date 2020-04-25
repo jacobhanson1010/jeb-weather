@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-md">
   <div class="row">
     <div class="col d-flex justify-content-center">
       <div class="btn-group btn-group-toggle" ngbRadioGroup name="fieldSelector" [(ngModel)]="selectedField">
@@ -9,17 +9,24 @@
     </div>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col d-flex justify-content-center">
       <div class="w-75">
         <div class="d-flex flex-column">
           <ng-container *ngFor="let hour of hours; let i = index;">
             <div class="d-flex justify-content-start align-items-center">
-              <div class="weather-code text-right mr-3" [style.visibility]="(i > 0 && hours[i].segmentAttributes.label == hours[i-1].segmentAttributes.label) ? 'hidden' : 'visible'">
-                {{hour.segmentAttributes.label}}
-              </div>
               <div class="bar" [style.background-color]="hour.segmentAttributes.color"></div>
-              <!--            <div class="spacer" [style.width.%]=""></div>-->
-              <div *ngFor="let vup of getSelectedFields()[i]">{{vup.value}} {{vup.units}}</div>
+              <div class="weather-code-time d-flex align-items-center">
+                <div class="ml-3">{{hours[i].observation_date.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+                    .replace(' ', '')
+                    .toLocaleLowerCase()}}</div>
+                <div class="ml-3" *ngIf="!(i > 0 && hours[i].segmentAttributes.label == hours[i-1].segmentAttributes.label)">{{hour.segmentAttributes.label}}</div>
+                <div class="spacer flex-fill ml-3"></div>
+              </div>
+              <div class="d-flex flex-fill align-items-center">
+                <div class="spacer mr-3" [style.width.%]="getSpacerWidth(getSelectedFields()[i][0])"></div>
+                <div class="displayed-value">{{getSelectedFields()[i][0].value | number: '0.0-0'}} {{getSelectedFields()[i][0].units}}
+                  <div *ngIf="getSelectedFields()[i][1]" [style]="{'transform': 'rotate(' + getSelectedFields()[i][1].value + 'deg)'}">!</div></div>
+              </div>
             </div>
           </ng-container>
         </div>

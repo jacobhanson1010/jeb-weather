@@ -1,7 +1,18 @@
-.weather-code {
-  width: 150px;
+.weather-code-time {
+  width: 200px;
 }
 .bar {
   width: 40px;
   height: 40px;
+}
+
+.spacer-container {
+  width: calc(100% - 190px);
+}
+.spacer {
+  height: 0;
+  border-top: 1px solid #999;
+}
+.displayed-value {
+  width: 90px;
 }
