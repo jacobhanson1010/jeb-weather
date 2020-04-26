@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {ForecastHour} from '../../domain/hourly/ForecastHour';
 import {Segments} from '../../domain/Segments';
 import {ClimacellService} from '../../service/climacell.service';
@@ -24,6 +24,7 @@ export class DetailComponent implements OnInit {
     ['PRECIP RATE', ['precipitation']],
     ['CLOUD COVER', ['cloud_cover']]
   ]);
+  selectableFieldsDisplay = new Map();
   fieldsDecimalPipe = new Map([
     ['GUST', '1.0-0'],
     ['WIND', '1.0-0'],
@@ -67,7 +68,10 @@ export class DetailComponent implements OnInit {
       }
 
       this.selectedField = 'TEMP';
-      console.debug('detail component got hours', this.hours);
+      this.selectableFields.forEach(((value, key) => {
+        this.selectableFieldsDisplay.set(key, key + ' (' + this.hours[0][value[0]].units + ')');
+        console.debug('label', key + '(' + this.hours[0][value[0]].units + ')');
+      }));
     });
   }
 
@@ -116,8 +120,9 @@ export class DetailComponent implements OnInit {
     return (displayedVup.value - minForField) / (maxForField - minForField);
   }
 
+  weatherCodeWidth = 0;
   getWeatherCodeWidth(): number {
-    return Math.max(...this.hours.map(h => this.getTextWidth(h.segmentAttributes.label, null)));
+    return Math.max(...this.hours.map(h => this.getTextWidth(h.segmentAttributes.label))) + 12;
   }
 
   /**
@@ -129,12 +134,32 @@ export class DetailComponent implements OnInit {
    * @see https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
    */
   private textWidthCanvas;
-  private getTextWidth(text, font): number {
+  private getTextWidth(text: string): number {
+    let body = document.getElementsByClassName('hour-rows')[0];
+
     // re-use canvas object for better performance
     let canvas = this.textWidthCanvas || (this.textWidthCanvas = document.createElement("canvas"));
     let context = canvas.getContext("2d");
-    // context.font = font;
+    context.font = window.getComputedStyle(body).font;
     let metrics = context.measureText(text);
     return metrics.width;
+  }
+
+  scrollIntoView(e: Event) {
+
+    let element = e.currentTarget as HTMLElement;
+
+    if (!element.classList.contains('btn')) {
+      return;
+    }
+
+    element.parentElement.parentElement.scrollLeft = (element.offsetLeft / 2) + (element.clientWidth / 2);
+
+    console.debug('target', element.parentElement.parentElement);
+    // console.debug(element.offsetLeft);
+    // element.scrollIntoView({
+    //   inline: "center",
+    //   behavior: "smooth"
+    // });
   }
 }
