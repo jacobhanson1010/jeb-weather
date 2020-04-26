@@ -22,7 +22,25 @@ export class DetailComponent implements OnInit {
     ['TEMP', ['temp']],
     ['PRECIP PROB', ['precipitation_probability']],
     ['PRECIP RATE', ['precipitation']],
-    ['CLOUD COVER', ['cloud_cover']],
+    ['CLOUD COVER', ['cloud_cover']]
+  ]);
+  fieldsDecimalPipe = new Map([
+    ['GUST', '1.0-0'],
+    ['WIND', '1.0-0'],
+    ['FEELS LIKE', '1.0-0'],
+    ['TEMP', '1.0-0'],
+    ['PRECIP PROB', '1.0-0'],
+    ['PRECIP RATE', '1.0-2'],
+    ['CLOUD COVER', '1.0-0']
+  ]);
+  fieldsDisplayUnit = new Map([
+    ['GUST', ''],
+    ['WIND', ''],
+    ['FEELS LIKE', '°'],
+    ['TEMP', '°'],
+    ['PRECIP PROB', '%'],
+    ['PRECIP RATE', ''],
+    ['CLOUD COVER', '%']
   ]);
 
   // Comparator to preserve original property order
@@ -67,13 +85,21 @@ export class DetailComponent implements OnInit {
     });
   }
 
+  getFieldsDecimalPipe(): string {
+    return this.fieldsDecimalPipe.get(this.selectedField);
+  }
+
+  getFieldsUnit(): string {
+    return this.fieldsDisplayUnit.get(this.selectedField);
+  }
+
   getSpacerWidth(displayedVup: ValueUnitPair): number {
     if (!this.selectedField) {
       return 0;
     }
 
     if (displayedVup.units == '%') {
-      return displayedVup.value;
+      return displayedVup.value / 100;
     }
 
     let maxForField = Math.max(...this.getSelectedFields().map((vup: ValueUnitPair[]) => {
@@ -87,6 +113,28 @@ export class DetailComponent implements OnInit {
       return 0;
     }
 
-    return (displayedVup.value - minForField) / (maxForField - minForField) * 100;
+    return (displayedVup.value - minForField) / (maxForField - minForField);
+  }
+
+  getWeatherCodeWidth(): number {
+    return Math.max(...this.hours.map(h => this.getTextWidth(h.segmentAttributes.label, null)));
+  }
+
+  /**
+   * Uses canvas.measureText to compute and return the width of the given text of given font in pixels.
+   *
+   * @param {String} text The text to be rendered.
+   * @param {String} font The css font descriptor that text is to be rendered with (e.g. "bold 14px verdana").
+   *
+   * @see https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
+   */
+  private textWidthCanvas;
+  private getTextWidth(text, font): number {
+    // re-use canvas object for better performance
+    let canvas = this.textWidthCanvas || (this.textWidthCanvas = document.createElement("canvas"));
+    let context = canvas.getContext("2d");
+    // context.font = font;
+    let metrics = context.measureText(text);
+    return metrics.width;
   }
 }

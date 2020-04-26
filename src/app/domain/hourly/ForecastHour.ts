@@ -39,5 +39,8 @@ export class ForecastHour {
 
     this.segmentAttributes = weatherCodeLookupMap.get(this.weather_code.value);
     this.icon = lookupWeatherCodeIcon.get(this.weather_code.value);
+
+    this.wind_direction.value += 180;
+    if (this.wind_direction.value > 360) this.wind_direction.value -= 360;
   }
 }

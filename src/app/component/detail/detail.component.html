@@ -1,31 +1,43 @@
 <div class="container-md">
-  <div class="row">
+  <div class="row mb-3">
     <div class="col d-flex justify-content-center">
-      <div class="btn-group btn-group-toggle" ngbRadioGroup name="fieldSelector" [(ngModel)]="selectedField">
-        <label *ngFor="let field of selectableFields | keyvalue: originalOrder" ngbButtonLabel class="btn-primary">
-          <input ngbButton type="radio" [value]="field.key">{{field.key}}
-        </label>
+      <div class="scroll">
+        <div class="buttons btn-group btn-group-toggle" ngbRadioGroup name="fieldSelector" [(ngModel)]="selectedField">
+          <label *ngFor="let field of selectableFields | keyvalue: originalOrder" ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="field.key">{{field.key}} <span
+            *ngIf="field.key == selectedField">({{getSelectedFields()[0][0].units}})</span>
+          </label>
+        </div>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col d-flex justify-content-center">
-      <div class="w-75">
-        <div class="d-flex flex-column">
+      <div class="w-100-md-75">
+        <div class="d-flex flex-column hour-rows">
           <ng-container *ngFor="let hour of hours; let i = index;">
             <div class="d-flex justify-content-start align-items-center">
-              <div class="bar" [style.background-color]="hour.segmentAttributes.color"></div>
-              <div class="weather-code-time d-flex align-items-center">
-                <div class="ml-3">{{hours[i].observation_date.toLocaleString('en-US', { hour: 'numeric', hour12: true })
-                    .replace(' ', '')
-                    .toLocaleLowerCase()}}</div>
-                <div class="ml-3" *ngIf="!(i > 0 && hours[i].segmentAttributes.label == hours[i-1].segmentAttributes.label)">{{hour.segmentAttributes.label}}</div>
-                <div class="spacer flex-fill ml-3"></div>
+              <div class="bar flex-none" [style.background-color]="hour.segmentAttributes.color"></div>
+              <div class="weather-code-time flex-none d-flex align-items-center">
+                <div class="hour">{{hours[i].observation_date.toLocaleString('en-US', {hour: 'numeric', hour12: true})
+                  .replace(' ', '')
+                  .toLocaleLowerCase()}}</div>
+                <div class="weather-code" [style.width.px]="getWeatherCodeWidth()"
+                     *ngIf="!(i > 0 && hours[i].segmentAttributes.label == hours[i-1].segmentAttributes.label)">{{hour.segmentAttributes.label}}</div>
+                <div class="horizontal-line flex-fill ml-3"></div>
               </div>
-              <div class="d-flex flex-fill align-items-center">
-                <div class="spacer mr-3" [style.width.%]="getSpacerWidth(getSelectedFields()[i][0])"></div>
-                <div class="displayed-value">{{getSelectedFields()[i][0].value | number: '0.0-0'}} {{getSelectedFields()[i][0].units}}
-                  <div *ngIf="getSelectedFields()[i][1]" [style]="{'transform': 'rotate(' + getSelectedFields()[i][1].value + 'deg)'}">!</div></div>
+              <div class="d-flex align-items-center horizontal-line"
+                   [style.flex]="getSpacerWidth(getSelectedFields()[i][0])"></div>
+              <div class="displayed-value flex-none d-flex justify-content-center align-items-center">
+                <div class="flex-grow-1 horizontal-line mr-2"></div>
+                <div
+                  class="rounded bg-dark text-light px-2 d-flex justify-content-center">
+                  <div>{{getSelectedFields()[i][0].value | number: getFieldsDecimalPipe()}}{{getFieldsUnit()}}</div>
+                  <div class="ml-1" *ngIf="getSelectedFields()[i][1]"
+                       [style]="{'transform': 'rotate(' + getSelectedFields()[i][1].value + 'deg)'}">↑
+                  </div>
+                </div>
+                <div class="flex-grow-1"></div>
               </div>
             </div>
           </ng-container>

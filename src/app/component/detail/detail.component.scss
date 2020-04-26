@@ -1,18 +1,71 @@
-.weather-code-time {
-  width: 200px;
-}
-.bar {
-  width: 40px;
-  height: 40px;
+.scroll {
+  overflow: auto;
 }
 
-.spacer-container {
-  width: calc(100% - 190px);
+.buttons {
+  width: max-content;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
-.spacer {
+
+.flex-none {
+  flex: none;
+}
+
+@media (min-width: 816px) {
+
+  .bar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hour {
+    margin-left: 1rem;
+  }
+  .weather-code {
+    margin-left: .5rem;
+  }
+
+  .w-100-md-75 {
+    width: 75%;
+  }
+}
+
+@media (max-width: 816px) {
+
+  .bar {
+    width: 30px;
+    height: 40px;
+  }
+
+  .hour {
+    margin-left: 0.5rem;
+  }
+  .weather-code {
+    margin-left: 0.5rem;
+  }
+
+  .w-100-md-75 {
+    width: 100%;
+  }
+}
+
+.hour {
+  width: 3rem;
+}
+
+.hour-rows > div:first-child > .bar {
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+.hour-rows > div:last-child > .bar {
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.horizontal-line {
   height: 0;
-  border-top: 1px solid #999;
+  border-top: 1px solid #bababa;
 }
+
 .displayed-value {
-  width: 90px;
+  width: 110px;
 }

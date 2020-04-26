@@ -22,16 +22,14 @@
 }
 
 .range {
-  width: calc(90% - 156px);
+  width: calc(100% - 115px);
 }
 .bar {
   height: 18px;
 }
 
-.spacer {
-  margin-right: -52px;
-}
 .low {
+  margin-left: -52px;
   margin-right: 7px;
   width: 45px;
   text-align: right;

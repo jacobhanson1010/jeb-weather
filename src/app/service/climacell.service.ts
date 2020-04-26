@@ -87,7 +87,7 @@ export class ClimacellService {
       '&fields=temp,feels_like,precipitation_type,precipitation,precipitation_probability,wind_speed,wind_gust,wind_direction,sunrise,sunset,cloud_cover,weather_code' +
       '&start_time=now', this.headers())
       .subscribe((fc: any[]) => {
-        this.hourlyForecast.next(new ForecastFour(fc.slice(0, 96).map(f => new ForecastHour(f))));
+        this.hourlyForecast.next(new ForecastFour(fc.map(f => new ForecastHour(f))));
       },
       (error: HttpErrorResponse) => {
         console.error(error);
