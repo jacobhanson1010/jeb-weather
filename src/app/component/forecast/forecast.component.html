@@ -26,7 +26,7 @@
     </div>
     <div [@smoothCollapse]="forecastDay.collapsed ? 'initial' : 'final'"
       class="d-flex align-items-start justify-content-center">
-      A placeholder
+      <app-detail *ngIf="i < 4" [date]="forecastDay.date.getUTCDate()"></app-detail>
     </div>
   </ng-container>
 </div>

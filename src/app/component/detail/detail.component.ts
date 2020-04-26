@@ -24,7 +24,6 @@ export class DetailComponent implements OnInit {
     ['PRECIP RATE', ['precipitation']],
     ['CLOUD COVER', ['cloud_cover']]
   ]);
-  selectableFieldsDisplay = new Map();
   fieldsDecimalPipe = new Map([
     ['GUST', '1.0-0'],
     ['WIND', '1.0-0'],
@@ -58,6 +57,7 @@ export class DetailComponent implements OnInit {
     this.climacell.hourlyForecast.subscribe(hf => {
       if (this.date) {
         let startOfDateIndex = this.hours.findIndex(hour => {
+          console.debug('looking at hour', hour);
           if (hour.observation_date.getDate() == this.date) {
             return true;
           }
@@ -68,10 +68,8 @@ export class DetailComponent implements OnInit {
       }
 
       this.selectedField = 'TEMP';
-      this.selectableFields.forEach(((value, key) => {
-        this.selectableFieldsDisplay.set(key, key + ' (' + this.hours[0][value[0]].units + ')');
-        console.debug('label', key + '(' + this.hours[0][value[0]].units + ')');
-      }));
+
+      this.scrollIntoView(document.getElementById('TEMP').parentElement);
     });
   }
 
@@ -89,11 +87,11 @@ export class DetailComponent implements OnInit {
     });
   }
 
-  getFieldsDecimalPipe(): string {
+  getSelectedFieldDecimalPipe(): string {
     return this.fieldsDecimalPipe.get(this.selectedField);
   }
 
-  getFieldsUnit(): string {
+  getSelectedFieldUnits(): string {
     return this.fieldsDisplayUnit.get(this.selectedField);
   }
 
@@ -145,17 +143,21 @@ export class DetailComponent implements OnInit {
     return metrics.width;
   }
 
-  scrollIntoView(e: Event) {
+  scrollIntoView(e) {
 
-    let element = e.currentTarget as HTMLElement;
-
+    let element = e as HTMLElement;
     if (!element.classList.contains('btn')) {
       return;
     }
 
-    element.parentElement.parentElement.scrollLeft = (element.offsetLeft / 2) + (element.clientWidth / 2);
+    let scrollContainer = element.parentElement.parentElement;
 
-    console.debug('target', element.parentElement.parentElement);
+    scrollContainer.scrollTo({
+      behavior: "smooth",
+      left: (element.offsetLeft) - (scrollContainer.clientWidth / 3)
+    })
+
+    // console.debug('target', element.parentElement.parentElement);
     // console.debug(element.offsetLeft);
     // element.scrollIntoView({
     //   inline: "center",

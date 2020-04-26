@@ -4,8 +4,8 @@
       <div class="scroll">
         <div class="buttons btn-group btn-group-toggle" ngbRadioGroup name="fieldSelector" [(ngModel)]="selectedField">
           <label *ngFor="let field of selectableFields | keyvalue: originalOrder" ngbButtonLabel class="btn-primary"
-                 (click)="scrollIntoView($event)">
-            <input ngbButton type="radio" [value]="field.key" >{{selectableFieldsDisplay.get(field.key)}}
+                 (click)="scrollIntoView($event.currentTarget)">
+            <input ngbButton type="radio" [id]="field.key" [value]="field.key" >{{field.key}}
           </label>
         </div>
       </div>
@@ -30,13 +30,14 @@
                    [style.flex]="getSpacerWidth(getSelectedFields()[i][0])"></div>
               <div
                 class="rounded bg-dark text-light px-2 ml-2 d-flex justify-content-center">
-                <div>{{getSelectedFields()[i][0].value | number: getFieldsDecimalPipe()}}{{getFieldsUnit()}}</div>
+                <div>{{getSelectedFields()[i][0].value | number: getSelectedFieldDecimalPipe()}}{{getSelectedFieldUnits()}}</div>
                 <div class="ml-1" *ngIf="getSelectedFields()[i][1]"
                      [style]="{'transform': 'rotate(' + getSelectedFields()[i][1].value + 'deg)'}">↑
                 </div>
               </div>
             </div>
           </ng-container>
+          <div *ngIf="hours.length" class="text-left mt-1">Values in {{getSelectedFields()[0][0].units}}</div>
         </div>
       </div>
     </div>

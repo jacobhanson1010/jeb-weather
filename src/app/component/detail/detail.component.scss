@@ -65,7 +65,7 @@
 .hour-rows > div:first-child > .bar {
   border-radius: 0.25rem 0.25rem 0 0;
 }
-.hour-rows > div:last-child > .bar {
+.hour-rows > div:nth-last-child(2) > .bar {
   border-radius: 0 0 0.25rem 0.25rem;
 }
 
