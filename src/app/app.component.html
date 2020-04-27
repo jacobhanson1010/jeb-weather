@@ -1,6 +1,18 @@
 <app-header></app-header>
 <app-title></app-title>
 <app-timeline></app-timeline>
-<app-detail></app-detail>
+<div class="container-md">
+  <div class="row pb-2">
+    <div class="col d-flex justify-content-center">
+      <button type="button" class="btn btn-outline-secondary btn-sm" (click)="detailsCollapsed = !detailsCollapsed">
+        {{detailsCollapsed ? 'MORE' : 'LESS'}}</button>
+    </div>
+  </div>
+  <div class="row">
+    <div [@smoothCollapse]="detailsCollapsed ? 'initial' : 'final'" class="col">
+      <app-detail></app-detail>
+    </div>
+  </div>
+</div>
 <app-forecast></app-forecast>
 <!--<router-outlet></router-outlet>-->

@@ -1,14 +1,15 @@
-import {AfterContentInit, AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterContentInit, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {ForecastHour} from '../../domain/hourly/ForecastHour';
 import {Segments} from '../../domain/Segments';
 import {ClimacellService} from '../../service/climacell.service';
-import {ValueUnitPair} from "../../domain/ValueUnitPair";
-import {KeyValue} from "@angular/common";
+import {ValueUnitPair} from '../../domain/ValueUnitPair';
+import {KeyValue} from '@angular/common';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss']
+  styleUrls: ['./detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DetailComponent implements OnInit {
 
@@ -24,6 +25,9 @@ export class DetailComponent implements OnInit {
     ['PRECIP RATE', ['precipitation']],
     ['CLOUD COVER', ['cloud_cover']]
   ]);
+  fields = new Map();
+  spacerWidths = new Map();
+
   fieldsDecimalPipe = new Map([
     ['GUST', '1.0-0'],
     ['WIND', '1.0-0'],
@@ -50,18 +54,19 @@ export class DetailComponent implements OnInit {
 
   @Input() date: number;
 
-  constructor(private climacell: ClimacellService) {
+  uniqueId = this.uuidv4();
+
+  constructor(private climacell: ClimacellService, private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
     this.climacell.hourlyForecast.subscribe(hf => {
       if (this.date) {
-        let startOfDateIndex = this.hours.findIndex(hour => {
-          console.debug('looking at hour', hour);
-          if (hour.observation_date.getDate() == this.date) {
-            return true;
-          }
+
+        let startOfDateIndex = hf.hours.findIndex(hour => {
+          return hour.observation_date.getDate() == this.date;
         });
+
         this.hours = hf.hours.slice(startOfDateIndex, startOfDateIndex + 24);
       } else {
         this.hours = hf.hours.slice(0, 24);
@@ -69,58 +74,63 @@ export class DetailComponent implements OnInit {
 
       this.selectedField = 'TEMP';
 
-      this.scrollIntoView(document.getElementById('TEMP').parentElement);
+      this.selectableFields.forEach((value, key) => {
+        this.fields.set(key,
+          this.hours.map(hour => {
+            let fieldsForHour: ValueUnitPair[] = [];
+            value.forEach(field => {
+              fieldsForHour.push(hour[field]);
+            });
+            return fieldsForHour;
+          }));
+
+        this.spacerWidths.set(key, this.fields.get(key).map((hour: ValueUnitPair[]) => {
+          let value = hour[0];
+
+          if (value.units == '%') {
+            return value.value / 100;
+          }
+
+          let maxForField = Math.max(...this.fields.get(key).map((vup: ValueUnitPair[]) => {
+            return vup[0].value;
+          }));
+          let minForField = Math.min(...this.fields.get(key).map((vup: ValueUnitPair[]) => {
+            return vup[0].value;
+          }));
+
+          console.debug('calculated spacer width');
+
+          if (maxForField == 0) {
+            return 0;
+          }
+
+          return (value.value - minForField) / (maxForField - minForField);
+        }));
+      });
+
+      this.scrollIntoView(document.getElementById('TEMP'+this.uniqueId).parentElement);
+      this.cdr.detectChanges();
     });
+  }
+
+  getSpacerWidth(i: number): number {
+    if (!this.selectedField) {
+      return 0;
+    }
+
+    return this.spacerWidths.get(this.selectedField)[i];
   }
 
   getSelectedFields(): ValueUnitPair[][] {
-    if (!this.selectedField) {
-      return [];
-    }
-
-    return this.hours.map(hour => {
-      let fieldsForHour: ValueUnitPair[] = [];
-      this.selectableFields.get(this.selectedField).forEach(field => {
-        fieldsForHour.push(hour[field]);
-      });
-      return fieldsForHour;
-    });
+    return this.fields.get(this.selectedField);
   }
 
-  getSelectedFieldDecimalPipe(): string {
-    return this.fieldsDecimalPipe.get(this.selectedField);
-  }
-
-  getSelectedFieldUnits(): string {
-    return this.fieldsDisplayUnit.get(this.selectedField);
-  }
-
-  getSpacerWidth(displayedVup: ValueUnitPair): number {
-    if (!this.selectedField) {
-      return 0;
-    }
-
-    if (displayedVup.units == '%') {
-      return displayedVup.value / 100;
-    }
-
-    let maxForField = Math.max(...this.getSelectedFields().map((vup: ValueUnitPair[]) => {
-      return vup[0].value;
-    }));
-    let minForField = Math.min(...this.getSelectedFields().map((vup: ValueUnitPair[]) => {
-      return vup[0].value;
-    }));
-
-    if (maxForField == 0) {
-      return 0;
-    }
-
-    return (displayedVup.value - minForField) / (maxForField - minForField);
-  }
-
-  weatherCodeWidth = 0;
+  private weatherCodeWidth;
   getWeatherCodeWidth(): number {
-    return Math.max(...this.hours.map(h => this.getTextWidth(h.segmentAttributes.label))) + 12;
+    if (!this.weatherCodeWidth) {
+      this.weatherCodeWidth = Math.max(...this.hours.map(h => this.getTextWidth(h.segmentAttributes.label))) + 12;
+    }
+    return this.weatherCodeWidth;
   }
 
   /**
@@ -132,12 +142,13 @@ export class DetailComponent implements OnInit {
    * @see https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
    */
   private textWidthCanvas;
+
   private getTextWidth(text: string): number {
     let body = document.getElementsByClassName('hour-rows')[0];
 
     // re-use canvas object for better performance
-    let canvas = this.textWidthCanvas || (this.textWidthCanvas = document.createElement("canvas"));
-    let context = canvas.getContext("2d");
+    let canvas = this.textWidthCanvas || (this.textWidthCanvas = document.createElement('canvas'));
+    let context = canvas.getContext('2d');
     context.font = window.getComputedStyle(body).font;
     let metrics = context.measureText(text);
     return metrics.width;
@@ -153,15 +164,16 @@ export class DetailComponent implements OnInit {
     let scrollContainer = element.parentElement.parentElement;
 
     scrollContainer.scrollTo({
-      behavior: "smooth",
-      left: (element.offsetLeft) - (scrollContainer.clientWidth / 3)
-    })
-
-    // console.debug('target', element.parentElement.parentElement);
-    // console.debug(element.offsetLeft);
-    // element.scrollIntoView({
-    //   inline: "center",
-    //   behavior: "smooth"
-    // });
+      behavior: 'smooth',
+      left: (element.offsetLeft) - (scrollContainer.clientWidth / 2) + (element.clientWidth / 2)
+    });
   }
+
+  private uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
 }

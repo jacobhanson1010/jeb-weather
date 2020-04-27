@@ -24,9 +24,11 @@
         </div>
       </div>
     </div>
-    <div [@smoothCollapse]="forecastDay.collapsed ? 'initial' : 'final'"
-      class="d-flex align-items-start justify-content-center">
-      <app-detail *ngIf="i < 4" [date]="forecastDay.date.getUTCDate()"></app-detail>
+    <div class="row">
+      <div [@smoothCollapse]="forecastDay.collapsed ? 'initial' : 'final'"
+           class="col d-flex align-items-start justify-content-center">
+        <app-detail [classList]="'w-100'" *ngIf="i < 4" [date]="forecastDay.date.getUTCDate()"></app-detail>
+      </div>
     </div>
   </ng-container>
 </div>
