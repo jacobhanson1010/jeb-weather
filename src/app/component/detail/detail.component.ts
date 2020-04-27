@@ -98,8 +98,6 @@ export class DetailComponent implements OnInit {
             return vup[0].value;
           }));
 
-          console.debug('calculated spacer width');
-
           if (maxForField == 0) {
             return 0;
           }
