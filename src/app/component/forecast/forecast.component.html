@@ -7,7 +7,8 @@
           <img class="icon" [src]="'assets/weather_code/'+forecastDay.icon+'.svg'"/>
           <div class="flex-fill d-flex flex-column pl-1 align-items-center">
             <div class="">{{getDayOfWeek(forecastDay.date.getUTCDay())}}</div>
-            <div [className]="forecastDay.precipitation_probability.value > 10 ? 'text-primary' : 'text-muted'">{{forecastDay.precipitation_probability.value}}{{forecastDay.precipitation_probability.units}}</div>
+            <div [className]="forecastDay.precipitation_probability.value > 10 ? forecastDay.precipitation_probability.value > 50 ? 'text-primary font-weight-bold' : 'text-primary' : 'text-muted'">
+              {{forecastDay.precipitation_probability.value}}{{forecastDay.precipitation_probability.units}}</div>
           </div>
         </div>
 
