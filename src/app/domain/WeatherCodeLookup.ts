@@ -6,7 +6,7 @@ export const weatherCodeLookupMap = new Map([
   ["partly_cloudy", new Attributes("Partly Cloudy", "#c1c5ce", "#fff")],
   ["mostly_cloudy", new Attributes("Mostly Cloudy", "#a1a2a7", "#fff")],
   ["cloudy", new Attributes("Overcast", "#797f87", "#fff")],
-  ["tstorm", new Attributes("Thunderstorms", "#a5a47e", "")],
+  ["tstorm", new Attributes("Thunderstorms", "#d4d271", "")],
   ["rain_heavy", new Attributes("Heavy Rain", "#3267c7", "#fff")],
   ["rain", new Attributes("Rain", "#4a80c7", "#fff")],
   ["rain_light", new Attributes("Light Rain", "#80a5d6", "#fff")],
