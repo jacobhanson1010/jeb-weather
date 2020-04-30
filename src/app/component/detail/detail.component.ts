@@ -34,7 +34,7 @@ export class DetailComponent implements OnInit {
     ['FEELS LIKE', '1.0-0'],
     ['TEMP', '1.0-0'],
     ['PRECIP PROB', '1.0-0'],
-    ['PRECIP RATE', '1.2-2'],
+    ['PRECIP RATE', '1.3-3'],
     ['CLOUD COVER', '1.0-0']
   ]);
   fieldsDisplayUnit = new Map([

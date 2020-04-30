@@ -2,13 +2,13 @@
   <ng-container *ngFor="let forecastDay of forecast.days; let i = index;">
     <div class="row day" (click)="forecastDay.collapsed = (i < 4) ? !forecastDay.collapsed : forecastDay.collapsed">
       <div class="col d-flex justify-content-start align-items-center">
-        <!--      <span class="weather-code-icon">-->
-        <!--        <img src="assets/weather_code/clear.png" class="w-100 h-100">-->
-        <!--      </span>-->
         <div class="weather-code-div d-flex align-items-center">
           <!--        <div class="weather-code-icon">{{forecastDay.weather_code.value}}</div>-->
           <img class="icon" [src]="'assets/weather_code/'+forecastDay.icon+'.svg'"/>
-          <div class="pl-1">{{getDayOfWeek(forecastDay.date.getUTCDay())}}</div>
+          <div class="flex-fill d-flex flex-column pl-1 align-items-center">
+            <div class="">{{getDayOfWeek(forecastDay.date.getUTCDay())}}</div>
+            <div [className]="forecastDay.precipitation_probability.value > 10 ? 'text-primary' : 'text-muted'">{{forecastDay.precipitation_probability.value}}{{forecastDay.precipitation_probability.units}}</div>
+          </div>
         </div>
 
         <div class="flex-fill d-flex justify-content-center align-items-center">

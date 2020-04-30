@@ -17,7 +17,7 @@ export const weatherCodeDowngradeMap: {k: string, v: number}[] = [
     {k: 'rain', v: 0.1},
     {k: 'light_rain', v: 0.05},
     {k: 'drizzle', v: 0.01},
-    {k: 'cloudy', v:null}
+    {k: 'cloudy', v: null}
 ];
 
 export class ForecastDaily {
@@ -106,8 +106,8 @@ export class ForecastDaily {
       return;
     }
 
-    if (this.precipitation_accumulation.value > weatherCodeDowngradeMap.find(entry => entry.k == this.weather_code.value).v) {
-      // console.debug(this.date.getUTCDate() + ': ' + this.precipitation_accumulation.value + ' is permitted for ' + this.weather_code.value);
+    if (this.precipitation_accumulation.value >= weatherCodeDowngradeMap.find(entry => entry.k == this.weather_code.value).v) {
+      console.debug(this.date.getUTCDate() + ': ' + this.precipitation_accumulation.value + ' is permitted for ' + this.weather_code.value);
       // If the precip accumulation is greater than what we permit, allow it.
       return;
     }
@@ -119,14 +119,14 @@ export class ForecastDaily {
         continue;
       }
 
-      if (this.precipitation_accumulation.value > weatherCodeDowngradeMap[n].v) {
-        // console.debug(this.date.getUTCDate() + ': ' + this.precipitation_accumulation.value + ' is permitted for ' + this.weather_code.value);
+      if (this.precipitation_accumulation.value >= weatherCodeDowngradeMap[n].v) {
+        console.debug(this.date.getUTCDate() + ': ' + this.precipitation_accumulation.value + ' is permitted for ' + this.weather_code.value);
         return;
       }
 
       let downgrade = weatherCodeDowngradeMap[n+1].k;
 
-      // console.debug(this.date.getUTCDate() + ': ' + this.precipitation_accumulation.value + ' is not permitted for ' + this.weather_code.value + '. downgrading to ' + downgrade);
+      console.debug(this.date.getUTCDate() + ': ' + this.precipitation_accumulation.value + ' is not permitted for ' + this.weather_code.value + '. downgrading to ' + downgrade);
       // Otherwise the value is below what we permit for this weather code. Change the weather code.
       this.weather_code.value = downgrade;
     }
