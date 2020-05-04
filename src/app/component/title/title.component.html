@@ -7,7 +7,7 @@
         <div class="condition">{{now?.segmentAttributes?.label}}</div>
       </div>
       <div class="details d-flex flex-column">
-        <div>Feels&nbsp;Like:&nbsp;<b>{{now?.feels_like.value | number: '0.1-1'}}</b>&deg;&nbsp;Precip&nbsp;:&nbsp;<b>{{today?.precipitation_probability.value | number: '1.0-0'}}</b>{{today?.precipitation_probability.units}}</div>
+        <div>Feels&nbsp;Like:&nbsp;<b>{{now?.feels_like.value | number: '0.1-1'}}</b>&deg;&nbsp;Precip:&nbsp;<span [className]="today.precipitation_probability.value > 10 ? today.precipitation_probability.value > 50 ? 'text-primary font-weight-bold' : 'text-primary' : 'text-muted'">{{today?.precipitation_probability.value | number: '1.0-0'}}{{today?.precipitation_probability.units}}</span></div>
         <div>Low:&nbsp;<b>{{today?.temp_min.vup.value | number: '0.1-1'}}</b>&deg;&nbsp;High:&nbsp;<b>{{today?.temp_max.vup.value | number: '0.1-1'}}</b>&deg;</div>
       </div>
     </div>
