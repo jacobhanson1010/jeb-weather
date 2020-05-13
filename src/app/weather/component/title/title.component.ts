@@ -1,24 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ClimacellService} from '../../service/climacell.service';
 import {ForecastFour} from '../../domain/hourly/ForecastFour';
 import {ForecastHour} from '../../domain/hourly/ForecastHour';
 import {ForecastDaily} from '../../domain/daily/ForecastDaily';
 import {WeeklyForecast} from '../../domain/daily/WeeklyForecast';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss']
 })
-export class TitleComponent implements OnInit {
+export class TitleComponent implements OnInit, OnDestroy {
 
   constructor(private climacell: ClimacellService) { }
 
   now: ForecastHour;
   today: ForecastDaily;
 
+  titleSubscription: Subscription;
   ngOnInit(): void {
-    this.climacell.hourlyForecast.subscribe((forecast: ForecastFour) => {
+    this.titleSubscription = this.climacell.hourlyForecast.subscribe((forecast: ForecastFour) => {
       this.now = forecast.hours[0];
       this.climacell.dailyForecast.subscribe((forecast: WeeklyForecast) => {
         this.today = forecast.days[0];
@@ -30,4 +32,9 @@ export class TitleComponent implements OnInit {
     });
   }
 
+  ngOnDestroy() {
+    if (this.titleSubscription) {
+      this.titleSubscription.unsubscribe();
+    }
+  }
 }

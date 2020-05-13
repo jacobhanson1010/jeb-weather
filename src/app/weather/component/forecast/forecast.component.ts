@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ClimacellService} from '../../service/climacell.service';
 import {WeeklyForecast} from '../../domain/daily/WeeklyForecast';
 import {WeekDay} from '@angular/common';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-forecast',
@@ -24,15 +25,16 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     ]),
   ]
 })
-export class ForecastComponent implements OnInit {
+export class ForecastComponent implements OnInit, OnDestroy {
 
   constructor(private climacell: ClimacellService) {
   }
 
   forecast: WeeklyForecast = new WeeklyForecast();
 
+  forecastSubscription: Subscription;
   ngOnInit(): void {
-    this.climacell.dailyForecast.subscribe(f => {
+    this.forecastSubscription = this.climacell.dailyForecast.subscribe(f => {
       // Need to create a copy of the days array, since we're going to be modifying it
       this.forecast = new WeeklyForecast(f.days.slice());
       this.forecast.days.splice(0, 1);
@@ -42,5 +44,11 @@ export class ForecastComponent implements OnInit {
 
   getDayOfWeek(i: number): string {
     return WeekDay[i].substr(0, 3);
+  }
+
+  ngOnDestroy() {
+    if (this.forecastSubscription) {
+      this.forecastSubscription.unsubscribe();
+    }
   }
 }

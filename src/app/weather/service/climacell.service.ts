@@ -7,48 +7,33 @@ import {ForecastFour} from '../domain/hourly/ForecastFour';
 import {ForecastDaily} from '../domain/daily/ForecastDaily';
 import {WeeklyForecast} from '../domain/daily/WeeklyForecast';
 import {Attributes} from '../domain/Segments';
+import {PlaceService} from './place.service';
+import {Place} from '../domain/Place';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClimacellService {
 
-  private coords: Coordinates;
+  private place: Place;
 
-  constructor(private http: HttpClient) {
-    this.getPosition().then((coords: Coordinates) => {
-        this.coords = coords;
-        console.debug('got coords', coords);
+  constructor(private http: HttpClient, private placeService: PlaceService) {
+    placeService.getPlace().subscribe((place: Place) => {
+        this.place = place;
 
         if (!this.getKeyFromStorage()) {
-          this.setKeyIntoStorage(prompt('Please enter your Climacell API key:'));
-          window.location.reload();
-        } else {
-          this.retrieveHourly();
-          this.retrieveDaily();
+          if (!this.promptForKeyAndSave('Please enter your Climacell API key:')) {
+            return;
+          }
         }
+
+        this.retrieveHourly();
+        this.retrieveDaily();
       },
-      (error: PositionError) => {
-        if (error.code == error.PERMISSION_DENIED) {
-          alert('You must allow location access.');
-        } else {
-          alert('Could not retrieve your location.');
-        }
+      (errorMessage: string) => {
+        alert(errorMessage);
       });
   }
-
-  private getPosition(): Promise<Coordinates> {
-    return new Promise((resolve, reject) => {
-
-      navigator.geolocation.getCurrentPosition((resp: Position) => {
-          resolve(resp.coords);
-        },
-        err => {
-          reject(err);
-        });
-    });
-  }
-
 
   public hourlyForecast = new ReplaySubject<ForecastFour>(1);
   public dailyForecast = new ReplaySubject<WeeklyForecast>(1);
@@ -63,48 +48,60 @@ export class ClimacellService {
     };
   }
 
-  private setKeyIntoStorage(key: string) {
-    window.localStorage.setItem('apiKey', key.trim());
+  private promptForKeyAndSave(message: string): boolean {
+
+    let apiKey = prompt(message);
+    if (!apiKey) {
+      alert('You must provide a Climacell API key.');
+      return false;
+    }
+    window.localStorage.setItem('apiKey', apiKey.trim());
+    return true;
   }
 
   private getKeyFromStorage() {
     return window.localStorage.getItem('apiKey');
   }
 
+  private alreadyRePromptedForKey = false;
+
   private removeBadKeyFromStorageAndPromptForNew() {
-    if (this.getKeyFromStorage()) {
+
+    if (this.getKeyFromStorage() && !this.alreadyRePromptedForKey) {
+      this.alreadyRePromptedForKey = true;
       window.localStorage.removeItem('apiKey');
-      this.setKeyIntoStorage(prompt('Your Climacell API key was incorrect. Please try again:'));
-      window.location.reload();
+      if (this.promptForKeyAndSave('Your Climacell API key was incorrect. Please try again:')) {
+        window.location.reload();
+      }
     }
   }
 
   private retrieveHourly() {
     this.http.get('https://api.climacell.co/v3/weather/forecast/hourly?' +
-      'lat=' + this.coords.latitude +
-      '&lon=' + this.coords.longitude +
+      'lat=' + this.place.latitude +
+      '&lon=' + this.place.longitude +
       '&unit_system=us' +
       '&fields=temp,feels_like,precipitation_type,precipitation,precipitation_probability,wind_speed,wind_gust,wind_direction,sunrise,sunset,cloud_cover,weather_code' +
       '&start_time=now', this.headers())
       .subscribe((fc: any[]) => {
-        this.hourlyForecast.next(new ForecastFour(fc.map(f => new ForecastHour(f))));
-      },
-      (error: HttpErrorResponse) => {
-        console.error(error);
-        if (!error.ok) {
-          this.removeBadKeyFromStorageAndPromptForNew();
+          this.hourlyForecast.next(new ForecastFour(fc.map(f => new ForecastHour(f))));
+        },
+        (error: HttpErrorResponse) => {
+          console.error(error);
+          if (!error.ok) {
+            this.removeBadKeyFromStorageAndPromptForNew();
+          }
         }
-      }
-    );
+      );
   }
 
   private retrieveDaily() {
     this.http.get('https://api.climacell.co/v3/weather/forecast/daily?' +
-      'lat=' + this.coords.latitude +
-      '&lon=' + this.coords.longitude +
+      'lat=' + this.place.latitude +
+      '&lon=' + this.place.longitude +
       '&unit_system=us' +
       '&fields=sunrise,sunset,temp,feels_like,wind_speed,wind_direction,' +
-        'precipitation,precipitation_accumulation,precipitation_probability,weather_code' +
+      'precipitation,precipitation_accumulation,precipitation_probability,weather_code' +
       '&start_time=now', this.headers())
       .subscribe((fc: any[]) => {
           let forecast = fc.map(f => new ForecastDaily(f));

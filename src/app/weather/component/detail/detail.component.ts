@@ -1,9 +1,20 @@
-import {AfterContentInit, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
 import {ForecastHour} from '../../domain/hourly/ForecastHour';
 import {Segments} from '../../domain/Segments';
 import {ClimacellService} from '../../service/climacell.service';
 import {ValueUnitPair} from '../../domain/ValueUnitPair';
 import {KeyValue} from '@angular/common';
+import {uuidv4} from '../../weather.component';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-detail',
@@ -11,7 +22,7 @@ import {KeyValue} from '@angular/common';
   styleUrls: ['./detail.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent implements OnInit, OnDestroy {
 
   hours: ForecastHour[] = []; // next 24 hours from start
 
@@ -54,17 +65,18 @@ export class DetailComponent implements OnInit {
 
   @Input() date: number;
 
-  uniqueId = this.uuidv4();
+  uniqueId = uuidv4();
 
   constructor(private climacell: ClimacellService, private cdr: ChangeDetectorRef) {
   }
 
+  detailSubscription: Subscription;
   ngOnInit(): void {
-    this.climacell.hourlyForecast.subscribe(hf => {
+    this.detailSubscription = this.climacell.hourlyForecast.subscribe(hf => {
       if (this.date) {
 
         let startOfDateIndex = hf.hours.findIndex(hour => {
-          return hour.observation_date.getDate() == this.date;
+          return hour.observation_date.getDate() == this.date && hour.observation_date.getHours() == 6;
         });
 
         this.hours = hf.hours.slice(startOfDateIndex, startOfDateIndex + 24);
@@ -167,11 +179,9 @@ export class DetailComponent implements OnInit {
     });
   }
 
-  private uuidv4() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
-    });
+  ngOnDestroy() {
+    if (this.detailSubscription) {
+      this.detailSubscription.unsubscribe();
+    }
   }
-
 }
