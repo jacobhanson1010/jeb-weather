@@ -49,8 +49,9 @@ export class PlaceService {
       },
       error => {
         if (error.code == error.PERMISSION_DENIED) {
-          this.place.error('You must allow location access.');
+          this.place.error('You must allow location access and reload the page.');
         } else {
+          console.error('Failed to retrieve location', error);
           this.place.error('Could not retrieve your location.');
         }
       });

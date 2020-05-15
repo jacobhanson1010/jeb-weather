@@ -1,6 +1,4 @@
 import {
-  AfterContentInit,
-  AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -9,12 +7,11 @@ import {
   OnInit
 } from '@angular/core';
 import {ForecastHour} from '../../domain/hourly/ForecastHour';
-import {Segments} from '../../domain/Segments';
 import {ClimacellService} from '../../service/climacell.service';
 import {ValueUnitPair} from '../../domain/ValueUnitPair';
 import {KeyValue} from '@angular/common';
-import {uuidv4} from '../../weather.component';
 import {Subscription} from 'rxjs';
+import {uuidv4} from "../../../app.component";
 
 @Component({
   selector: 'app-detail',
@@ -117,9 +114,9 @@ export class DetailComponent implements OnInit, OnDestroy {
           return (value.value - minForField) / (maxForField - minForField);
         }));
       });
-
-      this.scrollIntoView(document.getElementById('TEMP'+this.uniqueId).parentElement);
       this.cdr.detectChanges();
+      let tempButton = document.getElementById('TEMP'+this.uniqueId);
+      this.scrollIntoView(tempButton.parentElement);
     });
   }
 

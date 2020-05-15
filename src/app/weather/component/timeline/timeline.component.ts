@@ -1,9 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ClimacellService} from '../../service/climacell.service';
-import {ForecastFour} from '../../domain/hourly/ForecastFour';
 import {Segments} from '../../domain/Segments';
 import {ForecastHour} from '../../domain/hourly/ForecastHour';
-import {uuidv4} from '../../weather.component';
 import {Subscription} from 'rxjs';
 
 @Component({
@@ -26,9 +24,7 @@ export class TimelineComponent implements OnInit, OnDestroy {
 
     this.timelineSubscription = this.climacell.hourlyForecast.subscribe(hf => {
       this.hours = hf.hours.slice(0, 24);
-      console.debug("timeline component got timeline", this.hours);
       this.segments = new Segments(this.hours);
-      console.debug("segments", this.segments);
     });
   }
 

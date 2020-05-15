@@ -1,12 +1,10 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {ForecastHour} from '../domain/hourly/ForecastHour';
-import {BehaviorSubject, Observable, ReplaySubject} from 'rxjs';
-import {map, skip, take} from 'rxjs/operators';
+import {ReplaySubject} from 'rxjs';
 import {ForecastFour} from '../domain/hourly/ForecastFour';
 import {ForecastDaily} from '../domain/daily/ForecastDaily';
 import {WeeklyForecast} from '../domain/daily/WeeklyForecast';
-import {Attributes} from '../domain/Segments';
 import {PlaceService} from './place.service';
 import {Place} from '../domain/Place';
 
@@ -63,16 +61,32 @@ export class ClimacellService {
     return window.localStorage.getItem('apiKey');
   }
 
-  private alreadyRePromptedForKey = false;
-
   private removeBadKeyFromStorageAndPromptForNew() {
 
-    if (this.getKeyFromStorage() && !this.alreadyRePromptedForKey) {
-      this.alreadyRePromptedForKey = true;
+    if (this.getKeyFromStorage()) {
       window.localStorage.removeItem('apiKey');
       if (this.promptForKeyAndSave('Your Climacell API key was incorrect. Please try again:')) {
         window.location.reload();
       }
+    }
+  }
+
+  private alreadyAlertedOnError = false;
+  private handleError(error: HttpErrorResponse) {
+
+    if (this.alreadyAlertedOnError) {
+      return;
+    }
+    console.error(error);
+    this.alreadyAlertedOnError = true;
+
+    if (error.status == 429) {
+      alert('Out of requests.');
+      return;
+    }
+
+    if (!error.ok) {
+      this.removeBadKeyFromStorageAndPromptForNew();
     }
   }
 
@@ -87,10 +101,7 @@ export class ClimacellService {
           this.hourlyForecast.next(new ForecastFour(fc.map(f => new ForecastHour(f))));
         },
         (error: HttpErrorResponse) => {
-          console.error(error);
-          if (!error.ok) {
-            this.removeBadKeyFromStorageAndPromptForNew();
-          }
+          this.handleError(error);
         }
       );
   }
@@ -117,10 +128,7 @@ export class ClimacellService {
           this.dailyForecast.next(new WeeklyForecast(forecast));
         },
         (error: HttpErrorResponse) => {
-          console.error(error);
-          if (!error.ok) {
-            this.removeBadKeyFromStorageAndPromptForNew();
-          }
+          this.handleError(error);
         }
       );
   }

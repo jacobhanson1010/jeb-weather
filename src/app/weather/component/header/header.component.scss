@@ -2,3 +2,12 @@
   height: 45px;
   font-size: 18px;
 }
+
+.locate {
+  cursor: pointer;
+
+  &:hover {
+    background: lightblue;
+    color: black;
+  }
+}
