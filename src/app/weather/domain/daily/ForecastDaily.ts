@@ -15,7 +15,7 @@ export class ValueUnitObservation {
 
 export const weatherCodeDowngradeMap: {k: string, v: number}[] = [
     {k: 'rain', v: 0.1},
-    {k: 'light_rain', v: 0.05},
+    {k: 'rain_light', v: 0.05},
     {k: 'drizzle', v: 0.01},
     {k: 'cloudy', v: null}
 ];
@@ -111,8 +111,6 @@ export class ForecastDaily {
       // If the precip accumulation is greater than what we permit, allow it.
       return;
     }
-
-    // weatherCodeDowngradeMap.entries().
 
     for (let n = 0; n < weatherCodeDowngradeMap.length - 1; n++) {
       if (this.weather_code.value != weatherCodeDowngradeMap[n].k) {
