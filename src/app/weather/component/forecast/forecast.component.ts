@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ClimacellService} from '../../service/climacell.service';
-import {WeeklyForecast} from '../../domain/daily/WeeklyForecast';
+import {WeeklyForecast} from '../../domain/climacell/daily/WeeklyForecast';
 import {WeekDay} from '@angular/common';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Subscription} from 'rxjs';

@@ -3,11 +3,11 @@
     <img width=84 height=84 *ngIf="now" [src]="'assets/weather_code/'+now.icon+'.svg'">
     <div class="pl-2 d-flex flex-column justify-content-center">
       <div class="d-flex align-items-end">
-        <div class="deg">{{now?.temp.value | number: '0.0-0'}}&deg;&nbsp;</div>
+        <div class="deg">{{now?.values.temp | number: '0.0-0'}}&deg;&nbsp;</div>
         <div class="condition">{{now?.segmentAttributes?.label}}</div>
       </div>
       <div class="details d-flex flex-column">
-        <div>Feels&nbsp;Like:&nbsp;<b>{{now?.feels_like.value | number: '0.1-1'}}</b>&deg;&nbsp;Precip:&nbsp;<span [className]="today?.precipitation_probability.value > 10 ? today?.precipitation_probability.value > 50 ? 'text-primary font-weight-bold' : 'text-primary' : 'text-muted'">{{today?.precipitation_probability.value | number: '1.0-0'}}{{today?.precipitation_probability.units}}</span></div>
+        <div>Feels&nbsp;Like:&nbsp;<b>{{now?.values.feels_like | number: '0.1-1'}}</b>&deg;&nbsp;Precip:&nbsp;<span [className]="today?.precipitation_probability.value > 10 ? today?.precipitation_probability.value > 50 ? 'text-primary font-weight-bold' : 'text-primary' : 'text-muted'">{{today?.precipitation_probability.value | number: '1.0-0'}}{{today?.precipitation_probability.units}}</span></div>
         <div>Low:&nbsp;<b>{{today?.temp_min.vup.value | number: '0.1-1'}}</b>&deg;&nbsp;High:&nbsp;<b>{{today?.temp_max.vup.value | number: '0.1-1'}}</b>&deg;</div>
       </div>
     </div>

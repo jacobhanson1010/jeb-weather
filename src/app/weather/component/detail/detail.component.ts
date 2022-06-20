@@ -6,9 +6,9 @@ import {
   OnDestroy,
   OnInit
 } from '@angular/core';
-import {ForecastHour} from '../../domain/hourly/ForecastHour';
+import {Interval} from '../../domain/climacell/hourly/Interval';
 import {ClimacellService} from '../../service/climacell.service';
-import {ValueUnitPair} from '../../domain/ValueUnitPair';
+import {ValueUnitPair} from '../../domain/climacell/ValueUnitPair';
 import {KeyValue} from '@angular/common';
 import {Subscription} from 'rxjs';
 import {uuidv4} from "../../../app.component";
@@ -21,7 +21,7 @@ import {uuidv4} from "../../../app.component";
 })
 export class DetailComponent implements OnInit, OnDestroy {
 
-  hours: ForecastHour[] = []; // next 24 hours from start
+  hours: Interval[] = []; // next 24 hours from start
 
   selectedField: string;
   selectableFields = new Map([
@@ -73,7 +73,7 @@ export class DetailComponent implements OnInit, OnDestroy {
       if (this.date) {
 
         let startOfDateIndex = hf.hours.findIndex(hour => {
-          return hour.observation_date.getDate() == this.date && hour.observation_date.getHours() == 6;
+          return hour.startTimeDate.getDate() == this.date && hour.startTimeDate.getHours() == 6;
         });
 
         this.hours = hf.hours.slice(startOfDateIndex, startOfDateIndex + 24);

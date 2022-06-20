@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ClimacellService} from '../../service/climacell.service';
 import {Segments} from '../../domain/Segments';
-import {ForecastHour} from '../../domain/hourly/ForecastHour';
+import {Interval} from '../../domain/climacell/hourly/Interval';
 import {Subscription} from 'rxjs';
 
 @Component({
@@ -11,7 +11,7 @@ import {Subscription} from 'rxjs';
 })
 export class TimelineComponent implements OnInit, OnDestroy {
 
-  hours: ForecastHour[] = []; // first 24 hours
+  hours: Interval[] = []; // first 24 hours
   segments: Segments = new Segments();
 
   id: string;

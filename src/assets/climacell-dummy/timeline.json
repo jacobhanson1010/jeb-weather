@@ -1,0 +1,1757 @@
+{
+  "data": {
+    "timelines": [
+      {
+        "timestep": "1h",
+        "endTime": "2022-06-25T07:00:00Z",
+        "startTime": "2022-06-20T19:00:00Z",
+        "intervals": [
+          {
+            "startTime": "2022-06-20T19:00:00Z",
+            "values": {
+              "cloudCover": 2,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-20T11:29:00Z",
+              "sunsetTime": "2022-06-21T01:27:00Z",
+              "temperature": 36.5,
+              "temperatureApparent": 42.5,
+              "windDirection": 206.88,
+              "windGust": 3.19,
+              "windSpeed": 1.13
+            }
+          },
+          {
+            "startTime": "2022-06-20T20:00:00Z",
+            "values": {
+              "cloudCover": 2.09,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-20T11:29:00Z",
+              "sunsetTime": "2022-06-21T01:27:00Z",
+              "temperature": 36.97,
+              "temperatureApparent": 39.22,
+              "windDirection": 132.9,
+              "windGust": 5.32,
+              "windSpeed": 4.36
+            }
+          },
+          {
+            "startTime": "2022-06-20T21:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-20T11:29:00Z",
+              "sunsetTime": "2022-06-21T01:27:00Z",
+              "temperature": 37.36,
+              "temperatureApparent": 39.02,
+              "windDirection": 136.57,
+              "windGust": 5.44,
+              "windSpeed": 4.39
+            }
+          },
+          {
+            "startTime": "2022-06-20T22:00:00Z",
+            "values": {
+              "cloudCover": 0.07,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-20T11:29:00Z",
+              "sunsetTime": "2022-06-21T01:27:00Z",
+              "temperature": 37.45,
+              "temperatureApparent": 39.01,
+              "windDirection": 138.61,
+              "windGust": 5.42,
+              "windSpeed": 4.28
+            }
+          },
+          {
+            "startTime": "2022-06-20T23:00:00Z",
+            "values": {
+              "cloudCover": 6.6,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-20T11:29:00Z",
+              "sunsetTime": "2022-06-21T01:27:00Z",
+              "temperature": 37.09,
+              "temperatureApparent": 39.1,
+              "windDirection": 137.33,
+              "windGust": 5.25,
+              "windSpeed": 4.08
+            }
+          },
+          {
+            "startTime": "2022-06-21T00:00:00Z",
+            "values": {
+              "cloudCover": 15.19,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-20T11:29:00Z",
+              "sunsetTime": "2022-06-21T01:27:00Z",
+              "temperature": 36.44,
+              "temperatureApparent": 38.64,
+              "windDirection": 134.64,
+              "windGust": 5.18,
+              "windSpeed": 3.86
+            }
+          },
+          {
+            "startTime": "2022-06-21T01:00:00Z",
+            "values": {
+              "cloudCover": 12.76,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-20T11:29:00Z",
+              "sunsetTime": "2022-06-21T01:27:00Z",
+              "temperature": 35.77,
+              "temperatureApparent": 36.93,
+              "windDirection": 132.23,
+              "windGust": 5.28,
+              "windSpeed": 3.52
+            }
+          },
+          {
+            "startTime": "2022-06-21T02:00:00Z",
+            "values": {
+              "cloudCover": 18.41,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-20T11:29:00Z",
+              "sunsetTime": "2022-06-21T01:27:00Z",
+              "temperature": 34,
+              "temperatureApparent": 34.16,
+              "windDirection": 127.1,
+              "windGust": 3.21,
+              "windSpeed": 1.92
+            }
+          },
+          {
+            "startTime": "2022-06-21T03:00:00Z",
+            "values": {
+              "cloudCover": 9.93,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-20T11:29:00Z",
+              "sunsetTime": "2022-06-21T01:27:00Z",
+              "temperature": 32.15,
+              "temperatureApparent": 32.84,
+              "windDirection": 116.78,
+              "windGust": 3.85,
+              "windSpeed": 1.72
+            }
+          },
+          {
+            "startTime": "2022-06-21T04:00:00Z",
+            "values": {
+              "cloudCover": 5.77,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-20T11:29:00Z",
+              "sunsetTime": "2022-06-21T01:27:00Z",
+              "temperature": 31.51,
+              "temperatureApparent": 31.94,
+              "windDirection": 124.54,
+              "windGust": 5.68,
+              "windSpeed": 2.04
+            }
+          },
+          {
+            "startTime": "2022-06-21T05:00:00Z",
+            "values": {
+              "cloudCover": 0.54,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 30.66,
+              "temperatureApparent": 31.02,
+              "windDirection": 104.43,
+              "windGust": 7.32,
+              "windSpeed": 3.55
+            }
+          },
+          {
+            "startTime": "2022-06-21T06:00:00Z",
+            "values": {
+              "cloudCover": 4.3,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 29.89,
+              "temperatureApparent": 30.36,
+              "windDirection": 113.12,
+              "windGust": 6.31,
+              "windSpeed": 3.18
+            }
+          },
+          {
+            "startTime": "2022-06-21T07:00:00Z",
+            "values": {
+              "cloudCover": 0.09,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 29.25,
+              "temperatureApparent": 29.5,
+              "windDirection": 106.01,
+              "windGust": 6.52,
+              "windSpeed": 3.56
+            }
+          },
+          {
+            "startTime": "2022-06-21T08:00:00Z",
+            "values": {
+              "cloudCover": 25.7,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 28.55,
+              "temperatureApparent": 28.71,
+              "windDirection": 134.27,
+              "windGust": 5.38,
+              "windSpeed": 2.84
+            }
+          },
+          {
+            "startTime": "2022-06-21T09:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 28.1,
+              "temperatureApparent": 28.23,
+              "windDirection": 138.9,
+              "windGust": 5.85,
+              "windSpeed": 3.05
+            }
+          },
+          {
+            "startTime": "2022-06-21T10:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 27.52,
+              "temperatureApparent": 28.19,
+              "windDirection": 170.92,
+              "windGust": 7,
+              "windSpeed": 3.62
+            }
+          },
+          {
+            "startTime": "2022-06-21T11:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 27.45,
+              "temperatureApparent": 28.46,
+              "windDirection": 185.03,
+              "windGust": 9.17,
+              "windSpeed": 4.56
+            }
+          },
+          {
+            "startTime": "2022-06-21T12:00:00Z",
+            "values": {
+              "cloudCover": 45.25,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 28,
+              "temperatureApparent": 29.1,
+              "windDirection": 199.82,
+              "windGust": 8.79,
+              "windSpeed": 4.73
+            }
+          },
+          {
+            "startTime": "2022-06-21T13:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 29.9,
+              "temperatureApparent": 30.91,
+              "windDirection": 206.83,
+              "windGust": 11.65,
+              "windSpeed": 5.27
+            }
+          },
+          {
+            "startTime": "2022-06-21T14:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 30.92,
+              "temperatureApparent": 33.85,
+              "windDirection": 187.09,
+              "windGust": 8.14,
+              "windSpeed": 4.47
+            }
+          },
+          {
+            "startTime": "2022-06-21T15:00:00Z",
+            "values": {
+              "cloudCover": 4.69,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 32.51,
+              "temperatureApparent": 35.53,
+              "windDirection": 193.58,
+              "windGust": 8.14,
+              "windSpeed": 4.22
+            }
+          },
+          {
+            "startTime": "2022-06-21T16:00:00Z",
+            "values": {
+              "cloudCover": 16.41,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 34.05,
+              "temperatureApparent": 36.33,
+              "windDirection": 198.29,
+              "windGust": 7.89,
+              "windSpeed": 3.88
+            }
+          },
+          {
+            "startTime": "2022-06-21T17:00:00Z",
+            "values": {
+              "cloudCover": 3.13,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 35.34,
+              "temperatureApparent": 37.17,
+              "windDirection": 189.04,
+              "windGust": 7.18,
+              "windSpeed": 3.23
+            }
+          },
+          {
+            "startTime": "2022-06-21T18:00:00Z",
+            "values": {
+              "cloudCover": 1.56,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 36.32,
+              "temperatureApparent": 37.82,
+              "windDirection": 161.84,
+              "windGust": 6.72,
+              "windSpeed": 2.81
+            }
+          },
+          {
+            "startTime": "2022-06-21T19:00:00Z",
+            "values": {
+              "cloudCover": 3.91,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 37.11,
+              "temperatureApparent": 37.98,
+              "windDirection": 136.11,
+              "windGust": 8.05,
+              "windSpeed": 3.8
+            }
+          },
+          {
+            "startTime": "2022-06-21T20:00:00Z",
+            "values": {
+              "cloudCover": 28.13,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 37.19,
+              "temperatureApparent": 37.26,
+              "windDirection": 129.66,
+              "windGust": 9.29,
+              "windSpeed": 4.79
+            }
+          },
+          {
+            "startTime": "2022-06-21T21:00:00Z",
+            "values": {
+              "cloudCover": 19.53,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 37.3,
+              "temperatureApparent": 37.1,
+              "windDirection": 126.58,
+              "windGust": 7.68,
+              "windSpeed": 3.82
+            }
+          },
+          {
+            "startTime": "2022-06-21T22:00:00Z",
+            "values": {
+              "cloudCover": 17.19,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 37.28,
+              "temperatureApparent": 36.84,
+              "windDirection": 120.86,
+              "windGust": 6.91,
+              "windSpeed": 3.52
+            }
+          },
+          {
+            "startTime": "2022-06-21T23:00:00Z",
+            "values": {
+              "cloudCover": 21.09,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 37.02,
+              "temperatureApparent": 36.27,
+              "windDirection": 119.69,
+              "windGust": 6.86,
+              "windSpeed": 3.73
+            }
+          },
+          {
+            "startTime": "2022-06-22T00:00:00Z",
+            "values": {
+              "cloudCover": 15.63,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 36.33,
+              "temperatureApparent": 35.66,
+              "windDirection": 126.61,
+              "windGust": 5.32,
+              "windSpeed": 3.14
+            }
+          },
+          {
+            "startTime": "2022-06-22T01:00:00Z",
+            "values": {
+              "cloudCover": 16.41,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 34.22,
+              "temperatureApparent": 34.59,
+              "windDirection": 80.44,
+              "windGust": 2.8,
+              "windSpeed": 1.72
+            }
+          },
+          {
+            "startTime": "2022-06-22T02:00:00Z",
+            "values": {
+              "cloudCover": 16.41,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 32.65,
+              "temperatureApparent": 32.51,
+              "windDirection": 77.48,
+              "windGust": 3.93,
+              "windSpeed": 2.6
+            }
+          },
+          {
+            "startTime": "2022-06-22T03:00:00Z",
+            "values": {
+              "cloudCover": 15.63,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 31.81,
+              "temperatureApparent": 31.5,
+              "windDirection": 99.34,
+              "windGust": 3.65,
+              "windSpeed": 2.46
+            }
+          },
+          {
+            "startTime": "2022-06-22T04:00:00Z",
+            "values": {
+              "cloudCover": 10.16,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-21T11:30:00Z",
+              "sunsetTime": "2022-06-22T01:27:00Z",
+              "temperature": 31.39,
+              "temperatureApparent": 31.21,
+              "windDirection": 118.79,
+              "windGust": 5.31,
+              "windSpeed": 3.38
+            }
+          },
+          {
+            "startTime": "2022-06-22T05:00:00Z",
+            "values": {
+              "cloudCover": 7.03,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 30.63,
+              "temperatureApparent": 30.89,
+              "windDirection": 138.41,
+              "windGust": 4.02,
+              "windSpeed": 2.62
+            }
+          },
+          {
+            "startTime": "2022-06-22T06:00:00Z",
+            "values": {
+              "cloudCover": 2.34,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 30.01,
+              "temperatureApparent": 30.24,
+              "windDirection": 145.07,
+              "windGust": 4.34,
+              "windSpeed": 2.78
+            }
+          },
+          {
+            "startTime": "2022-06-22T07:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 29.83,
+              "temperatureApparent": 30.14,
+              "windDirection": 171.65,
+              "windGust": 7.25,
+              "windSpeed": 4.54
+            }
+          },
+          {
+            "startTime": "2022-06-22T08:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 29.22,
+              "temperatureApparent": 30.17,
+              "windDirection": 194.28,
+              "windGust": 6.97,
+              "windSpeed": 4.41
+            }
+          },
+          {
+            "startTime": "2022-06-22T09:00:00Z",
+            "values": {
+              "cloudCover": 0.78,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 28.35,
+              "temperatureApparent": 29.81,
+              "windDirection": 193.66,
+              "windGust": 6.09,
+              "windSpeed": 3.85
+            }
+          },
+          {
+            "startTime": "2022-06-22T10:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 27.83,
+              "temperatureApparent": 29.43,
+              "windDirection": 198.43,
+              "windGust": 5.35,
+              "windSpeed": 3.37
+            }
+          },
+          {
+            "startTime": "2022-06-22T11:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 27.36,
+              "temperatureApparent": 28.98,
+              "windDirection": 194.22,
+              "windGust": 4.75,
+              "windSpeed": 3
+            }
+          },
+          {
+            "startTime": "2022-06-22T12:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 27.41,
+              "temperatureApparent": 29.2,
+              "windDirection": 185.05,
+              "windGust": 4.9,
+              "windSpeed": 3.14
+            }
+          },
+          {
+            "startTime": "2022-06-22T13:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 28.94,
+              "temperatureApparent": 31.31,
+              "windDirection": 187.25,
+              "windGust": 5.8,
+              "windSpeed": 3.19
+            }
+          },
+          {
+            "startTime": "2022-06-22T14:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 30.44,
+              "temperatureApparent": 33.22,
+              "windDirection": 206.15,
+              "windGust": 7.07,
+              "windSpeed": 3.67
+            }
+          },
+          {
+            "startTime": "2022-06-22T15:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 31.99,
+              "temperatureApparent": 35.09,
+              "windDirection": 216.28,
+              "windGust": 7,
+              "windSpeed": 3.34
+            }
+          },
+          {
+            "startTime": "2022-06-22T16:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 33.44,
+              "temperatureApparent": 36.41,
+              "windDirection": 218.25,
+              "windGust": 6.47,
+              "windSpeed": 2.75
+            }
+          },
+          {
+            "startTime": "2022-06-22T17:00:00Z",
+            "values": {
+              "cloudCover": 11.72,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 34.72,
+              "temperatureApparent": 37.4,
+              "windDirection": 200.72,
+              "windGust": 6.23,
+              "windSpeed": 2.03
+            }
+          },
+          {
+            "startTime": "2022-06-22T18:00:00Z",
+            "values": {
+              "cloudCover": 7.03,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 35.77,
+              "temperatureApparent": 38.18,
+              "windDirection": 169.75,
+              "windGust": 5.87,
+              "windSpeed": 1.99
+            }
+          },
+          {
+            "startTime": "2022-06-22T19:00:00Z",
+            "values": {
+              "cloudCover": 9.38,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 36.54,
+              "temperatureApparent": 38.87,
+              "windDirection": 147.71,
+              "windGust": 6.4,
+              "windSpeed": 2.44
+            }
+          },
+          {
+            "startTime": "2022-06-22T20:00:00Z",
+            "values": {
+              "cloudCover": 7.81,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 36.98,
+              "temperatureApparent": 38.96,
+              "windDirection": 137.22,
+              "windGust": 7.12,
+              "windSpeed": 3.12
+            }
+          },
+          {
+            "startTime": "2022-06-22T21:00:00Z",
+            "values": {
+              "cloudCover": 4.69,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 37.02,
+              "temperatureApparent": 38.61,
+              "windDirection": 132.33,
+              "windGust": 6.93,
+              "windSpeed": 3.1
+            }
+          },
+          {
+            "startTime": "2022-06-22T22:00:00Z",
+            "values": {
+              "cloudCover": 4.69,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 37.13,
+              "temperatureApparent": 38.57,
+              "windDirection": 128.14,
+              "windGust": 6.39,
+              "windSpeed": 2.89
+            }
+          },
+          {
+            "startTime": "2022-06-22T23:00:00Z",
+            "values": {
+              "cloudCover": 6.25,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 36.79,
+              "temperatureApparent": 37.97,
+              "windDirection": 125.05,
+              "windGust": 6.07,
+              "windSpeed": 2.96
+            }
+          },
+          {
+            "startTime": "2022-06-23T00:00:00Z",
+            "values": {
+              "cloudCover": 9.38,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 36.3,
+              "temperatureApparent": 37.18,
+              "windDirection": 120.55,
+              "windGust": 5.29,
+              "windSpeed": 2.85
+            }
+          },
+          {
+            "startTime": "2022-06-23T01:00:00Z",
+            "values": {
+              "cloudCover": 14.06,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 35.13,
+              "temperatureApparent": 36.16,
+              "windDirection": 105.38,
+              "windGust": 3.53,
+              "windSpeed": 2.18
+            }
+          },
+          {
+            "startTime": "2022-06-23T02:00:00Z",
+            "values": {
+              "cloudCover": 18.75,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 33.31,
+              "temperatureApparent": 34.37,
+              "windDirection": 78.83,
+              "windGust": 4.09,
+              "windSpeed": 2.56
+            }
+          },
+          {
+            "startTime": "2022-06-23T03:00:00Z",
+            "values": {
+              "cloudCover": 20.31,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 32.63,
+              "temperatureApparent": 33.86,
+              "windDirection": 85.88,
+              "windGust": 5.79,
+              "windSpeed": 3.65
+            }
+          },
+          {
+            "startTime": "2022-06-23T04:00:00Z",
+            "values": {
+              "cloudCover": 15.63,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-22T11:30:00Z",
+              "sunsetTime": "2022-06-23T01:27:00Z",
+              "temperature": 32.02,
+              "temperatureApparent": 33.3,
+              "windDirection": 101.87,
+              "windGust": 5.33,
+              "windSpeed": 3.42
+            }
+          },
+          {
+            "startTime": "2022-06-23T05:00:00Z",
+            "values": {
+              "cloudCover": 10.16,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 31.18,
+              "temperatureApparent": 32.54,
+              "windDirection": 90.87,
+              "windGust": 3.84,
+              "windSpeed": 2.48
+            }
+          },
+          {
+            "startTime": "2022-06-23T06:00:00Z",
+            "values": {
+              "cloudCover": 7.81,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 30.39,
+              "temperatureApparent": 32,
+              "windDirection": 96.16,
+              "windGust": 3.81,
+              "windSpeed": 2.45
+            }
+          },
+          {
+            "startTime": "2022-06-23T07:00:00Z",
+            "values": {
+              "cloudCover": 5.47,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 29.7,
+              "temperatureApparent": 31.3,
+              "windDirection": 116.27,
+              "windGust": 3.38,
+              "windSpeed": 2.2
+            }
+          },
+          {
+            "startTime": "2022-06-23T08:00:00Z",
+            "values": {
+              "cloudCover": 3.91,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 29.2,
+              "temperatureApparent": 30.68,
+              "windDirection": 120.16,
+              "windGust": 3.41,
+              "windSpeed": 2.21
+            }
+          },
+          {
+            "startTime": "2022-06-23T09:00:00Z",
+            "values": {
+              "cloudCover": 3.13,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 28.83,
+              "temperatureApparent": 30.21,
+              "windDirection": 116.53,
+              "windGust": 3.33,
+              "windSpeed": 2.16
+            }
+          },
+          {
+            "startTime": "2022-06-23T10:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 28.53,
+              "temperatureApparent": 29.97,
+              "windDirection": 137.55,
+              "windGust": 4.47,
+              "windSpeed": 2.84
+            }
+          },
+          {
+            "startTime": "2022-06-23T11:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 27.72,
+              "temperatureApparent": 29.13,
+              "windDirection": 163.35,
+              "windGust": 3.58,
+              "windSpeed": 2.31
+            }
+          },
+          {
+            "startTime": "2022-06-23T12:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 27.67,
+              "temperatureApparent": 28.94,
+              "windDirection": 171.36,
+              "windGust": 3.4,
+              "windSpeed": 2.21
+            }
+          },
+          {
+            "startTime": "2022-06-23T13:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 30.21,
+              "temperatureApparent": 31.48,
+              "windDirection": 220.21,
+              "windGust": 4.89,
+              "windSpeed": 2.89
+            }
+          },
+          {
+            "startTime": "2022-06-23T14:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 32.44,
+              "temperatureApparent": 33.34,
+              "windDirection": 244.18,
+              "windGust": 7.02,
+              "windSpeed": 3.81
+            }
+          },
+          {
+            "startTime": "2022-06-23T15:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 34.35,
+              "temperatureApparent": 35.29,
+              "windDirection": 258.54,
+              "windGust": 7.87,
+              "windSpeed": 4.34
+            }
+          },
+          {
+            "startTime": "2022-06-23T16:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 35.92,
+              "temperatureApparent": 36.91,
+              "windDirection": 265.82,
+              "windGust": 7.26,
+              "windSpeed": 3.97
+            }
+          },
+          {
+            "startTime": "2022-06-23T17:00:00Z",
+            "values": {
+              "cloudCover": 13.02,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 37.12,
+              "temperatureApparent": 37.78,
+              "windDirection": 247.71,
+              "windGust": 5.84,
+              "windSpeed": 3.09
+            }
+          },
+          {
+            "startTime": "2022-06-23T18:00:00Z",
+            "values": {
+              "cloudCover": 5.47,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 37.87,
+              "temperatureApparent": 38.32,
+              "windDirection": 229.71,
+              "windGust": 4.65,
+              "windSpeed": 2.55
+            }
+          },
+          {
+            "startTime": "2022-06-23T19:00:00Z",
+            "values": {
+              "cloudCover": 5.86,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 38.53,
+              "temperatureApparent": 38.6,
+              "windDirection": 222.84,
+              "windGust": 3.83,
+              "windSpeed": 1.93
+            }
+          },
+          {
+            "startTime": "2022-06-23T20:00:00Z",
+            "values": {
+              "cloudCover": 2.6,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 39.2,
+              "temperatureApparent": 39.06,
+              "windDirection": 214.6,
+              "windGust": 3.31,
+              "windSpeed": 1.28
+            }
+          },
+          {
+            "startTime": "2022-06-23T21:00:00Z",
+            "values": {
+              "cloudCover": 11.56,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 39.73,
+              "temperatureApparent": 39.21,
+              "windDirection": 186.62,
+              "windGust": 3.08,
+              "windSpeed": 0.96
+            }
+          },
+          {
+            "startTime": "2022-06-23T22:00:00Z",
+            "values": {
+              "cloudCover": 24.3,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 39.92,
+              "temperatureApparent": 38.99,
+              "windDirection": 159.03,
+              "windGust": 2.91,
+              "windSpeed": 1.51
+            }
+          },
+          {
+            "startTime": "2022-06-23T23:00:00Z",
+            "values": {
+              "cloudCover": 19.01,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 39.97,
+              "temperatureApparent": 38.64,
+              "windDirection": 155.97,
+              "windGust": 3.26,
+              "windSpeed": 3.18
+            }
+          },
+          {
+            "startTime": "2022-06-24T00:00:00Z",
+            "values": {
+              "cloudCover": 15.76,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 39.25,
+              "temperatureApparent": 37.77,
+              "windDirection": 130.87,
+              "windGust": 3.89,
+              "windSpeed": 3.89
+            }
+          },
+          {
+            "startTime": "2022-06-24T01:00:00Z",
+            "values": {
+              "cloudCover": 0.15,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 35.95,
+              "temperatureApparent": 34.57,
+              "windDirection": 83.65,
+              "windGust": 6.67,
+              "windSpeed": 4.5
+            }
+          },
+          {
+            "startTime": "2022-06-24T02:00:00Z",
+            "values": {
+              "cloudCover": 39.88,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 33.35,
+              "temperatureApparent": 32.7,
+              "windDirection": 93.58,
+              "windGust": 10.84,
+              "windSpeed": 6.39
+            }
+          },
+          {
+            "startTime": "2022-06-24T03:00:00Z",
+            "values": {
+              "cloudCover": 58.4,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 33.24,
+              "temperatureApparent": 32.27,
+              "windDirection": 105.6,
+              "windGust": 10.64,
+              "windSpeed": 5.91
+            }
+          },
+          {
+            "startTime": "2022-06-24T04:00:00Z",
+            "values": {
+              "cloudCover": 45.57,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-23T11:30:00Z",
+              "sunsetTime": "2022-06-24T01:27:00Z",
+              "temperature": 32.42,
+              "temperatureApparent": 31.24,
+              "windDirection": 139.24,
+              "windGust": 12.23,
+              "windSpeed": 6.04
+            }
+          },
+          {
+            "startTime": "2022-06-24T05:00:00Z",
+            "values": {
+              "cloudCover": 56.46,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 33.13,
+              "temperatureApparent": 32.07,
+              "windDirection": 145.58,
+              "windGust": 12.33,
+              "windSpeed": 6.05
+            }
+          },
+          {
+            "startTime": "2022-06-24T06:00:00Z",
+            "values": {
+              "cloudCover": 63.75,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 32.92,
+              "temperatureApparent": 31.94,
+              "windDirection": 161.94,
+              "windGust": 11.55,
+              "windSpeed": 5.95
+            }
+          },
+          {
+            "startTime": "2022-06-24T07:00:00Z",
+            "values": {
+              "cloudCover": 98.88,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 31.6,
+              "temperatureApparent": 30.78,
+              "windDirection": 170.82,
+              "windGust": 11.15,
+              "windSpeed": 5.5
+            }
+          },
+          {
+            "startTime": "2022-06-24T08:00:00Z",
+            "values": {
+              "cloudCover": 69.24,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 30.94,
+              "temperatureApparent": 30.24,
+              "windDirection": 185.31,
+              "windGust": 11.87,
+              "windSpeed": 5.71
+            }
+          },
+          {
+            "startTime": "2022-06-24T09:00:00Z",
+            "values": {
+              "cloudCover": 50.67,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 30.22,
+              "temperatureApparent": 29.57,
+              "windDirection": 192.41,
+              "windGust": 11.23,
+              "windSpeed": 5.4
+            }
+          },
+          {
+            "startTime": "2022-06-24T10:00:00Z",
+            "values": {
+              "cloudCover": 42.15,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 29.62,
+              "temperatureApparent": 29.03,
+              "windDirection": 199.67,
+              "windGust": 11.28,
+              "windSpeed": 5.14
+            }
+          },
+          {
+            "startTime": "2022-06-24T11:00:00Z",
+            "values": {
+              "cloudCover": 34.71,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 29.02,
+              "temperatureApparent": 28.53,
+              "windDirection": 205.87,
+              "windGust": 10.71,
+              "windSpeed": 4.73
+            }
+          },
+          {
+            "startTime": "2022-06-24T12:00:00Z",
+            "values": {
+              "cloudCover": 29.9,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 28.52,
+              "temperatureApparent": 28.27,
+              "windDirection": 207.54,
+              "windGust": 10.66,
+              "windSpeed": 4.45
+            }
+          },
+          {
+            "startTime": "2022-06-24T13:00:00Z",
+            "values": {
+              "cloudCover": 10.11,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 30.03,
+              "temperatureApparent": 29.72,
+              "windDirection": 212.52,
+              "windGust": 10.12,
+              "windSpeed": 4.87
+            }
+          },
+          {
+            "startTime": "2022-06-24T14:00:00Z",
+            "values": {
+              "cloudCover": 10.68,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 32.14,
+              "temperatureApparent": 31.57,
+              "windDirection": 222.75,
+              "windGust": 8.61,
+              "windSpeed": 5.54
+            }
+          },
+          {
+            "startTime": "2022-06-24T15:00:00Z",
+            "values": {
+              "cloudCover": 13.21,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 34.24,
+              "temperatureApparent": 33.56,
+              "windDirection": 225.18,
+              "windGust": 6.94,
+              "windSpeed": 5.21
+            }
+          },
+          {
+            "startTime": "2022-06-24T16:00:00Z",
+            "values": {
+              "cloudCover": 11.49,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 36.34,
+              "temperatureApparent": 35.52,
+              "windDirection": 231.46,
+              "windGust": 5.81,
+              "windSpeed": 4.92
+            }
+          },
+          {
+            "startTime": "2022-06-24T17:00:00Z",
+            "values": {
+              "cloudCover": 10.96,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 38.14,
+              "temperatureApparent": 37.23,
+              "windDirection": 233.5,
+              "windGust": 4.82,
+              "windSpeed": 4.29
+            }
+          },
+          {
+            "startTime": "2022-06-24T18:00:00Z",
+            "values": {
+              "cloudCover": 10.23,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 39.25,
+              "temperatureApparent": 38.19,
+              "windDirection": 231.55,
+              "windGust": 3.88,
+              "windSpeed": 3.58
+            }
+          },
+          {
+            "startTime": "2022-06-24T19:00:00Z",
+            "values": {
+              "cloudCover": 7.44,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 39.86,
+              "temperatureApparent": 38.8,
+              "windDirection": 222.87,
+              "windGust": 3.08,
+              "windSpeed": 2.82
+            }
+          },
+          {
+            "startTime": "2022-06-24T20:00:00Z",
+            "values": {
+              "cloudCover": 8.46,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 40.36,
+              "temperatureApparent": 39.23,
+              "windDirection": 198.23,
+              "windGust": 2.86,
+              "windSpeed": 2.23
+            }
+          },
+          {
+            "startTime": "2022-06-24T21:00:00Z",
+            "values": {
+              "cloudCover": 7.62,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 40.95,
+              "temperatureApparent": 39.78,
+              "windDirection": 165.21,
+              "windGust": 2.71,
+              "windSpeed": 2.38
+            }
+          },
+          {
+            "startTime": "2022-06-24T22:00:00Z",
+            "values": {
+              "cloudCover": 6.94,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 41.05,
+              "temperatureApparent": 39.87,
+              "windDirection": 153.06,
+              "windGust": 2.93,
+              "windSpeed": 2.76
+            }
+          },
+          {
+            "startTime": "2022-06-24T23:00:00Z",
+            "values": {
+              "cloudCover": 6.76,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 40.76,
+              "temperatureApparent": 39.54,
+              "windDirection": 148.66,
+              "windGust": 3.32,
+              "windSpeed": 2.28
+            }
+          },
+          {
+            "startTime": "2022-06-25T00:00:00Z",
+            "values": {
+              "cloudCover": 6.46,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 40.25,
+              "temperatureApparent": 39.16,
+              "windDirection": 122.74,
+              "windGust": 3.57,
+              "windSpeed": 0.77
+            }
+          },
+          {
+            "startTime": "2022-06-25T01:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 37.13,
+              "temperatureApparent": 36.61,
+              "windDirection": 36.84,
+              "windGust": 1.71,
+              "windSpeed": 1.71
+            }
+          },
+          {
+            "startTime": "2022-06-25T02:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 34.63,
+              "temperatureApparent": 33.12,
+              "windDirection": 65.68,
+              "windGust": 2,
+              "windSpeed": 1.99
+            }
+          },
+          {
+            "startTime": "2022-06-25T03:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 33.85,
+              "temperatureApparent": 32.45,
+              "windDirection": 82.92,
+              "windGust": 8.01,
+              "windSpeed": 4.9
+            }
+          },
+          {
+            "startTime": "2022-06-25T04:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-24T11:30:00Z",
+              "sunsetTime": "2022-06-25T01:28:00Z",
+              "temperature": 33.59,
+              "temperatureApparent": 32.27,
+              "windDirection": 136.93,
+              "windGust": 9.35,
+              "windSpeed": 4.22
+            }
+          },
+          {
+            "startTime": "2022-06-25T05:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-25T11:30:00Z",
+              "sunsetTime": "2022-06-26T01:28:00Z",
+              "temperature": 34.48,
+              "temperatureApparent": 33.3,
+              "windDirection": 162.41,
+              "windGust": 11.8,
+              "windSpeed": 6.01
+            }
+          },
+          {
+            "startTime": "2022-06-25T06:00:00Z",
+            "values": {
+              "cloudCover": 0,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-25T11:30:00Z",
+              "sunsetTime": "2022-06-26T01:28:00Z",
+              "temperature": 34.23,
+              "temperatureApparent": 33.04,
+              "windDirection": 172.24,
+              "windGust": 12.3,
+              "windSpeed": 7.18
+            }
+          },
+          {
+            "startTime": "2022-06-25T07:00:00Z",
+            "values": {
+              "cloudCover": 5.8,
+              "precipitationIntensity": 0,
+              "precipitationProbability": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-25T11:30:00Z",
+              "sunsetTime": "2022-06-26T01:28:00Z",
+              "temperature": 33.14,
+              "temperatureApparent": 31.84,
+              "windDirection": 183.39,
+              "windGust": 12.24,
+              "windSpeed": 6.5
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

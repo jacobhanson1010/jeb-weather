@@ -1,4 +1,4 @@
-import {ForecastHour} from './hourly/ForecastHour';
+import {Interval} from './climacell/hourly/Interval';
 
 export class Attributes {
   label: string;
@@ -21,13 +21,13 @@ export class Segments {
 
   segments: Segment[] = [];
 
-  constructor(hours?: ForecastHour[]) {
+  constructor(hours?: Interval[]) {
     if (!hours) {
-      return
+      return;
     }
 
     // group contiguous weather_codes
-    let result: ForecastHour[][] = hours.reduce((acc, forecastHour: ForecastHour) => {
+    const result: Interval[][] = hours.reduce((acc, forecastHour: Interval) => {
       // compare the current value with the last item in the collected array
       if (acc.length && acc[acc.length - 1][0].segmentAttributes.label == forecastHour.segmentAttributes.label) {
         // append the current value to it if it is matching
@@ -40,12 +40,12 @@ export class Segments {
       return acc;
     }, []);
 
-    result.forEach((forecastHoursGroup: ForecastHour[]) => {
+    result.forEach((forecastHoursGroup: Interval[]) => {
 
       this.segments.push({
         attributes: forecastHoursGroup[0].segmentAttributes,
         duration: forecastHoursGroup.length
-      })
+      });
     });
   }
 }

@@ -1,5 +1,5 @@
 import {ValueUnitPair} from '../ValueUnitPair';
-import {Attributes} from '../Segments';
+import {Attributes} from '../../Segments';
 import {lookupWeatherCodeIcon} from '../WeatherCodeLookup';
 
 class MinMaxObservation {

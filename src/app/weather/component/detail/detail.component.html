@@ -14,7 +14,7 @@
       <ng-container *ngFor="let hour of hours; let i = index;">
         <div class="d-flex justify-content-start align-items-center">
           <div class="bar flex-none" [style.background-color]="hour.segmentAttributes.color"></div>
-          <div class="hour">{{hours[i].observation_date.toLocaleString('en-US', {hour: 'numeric', hour12: true})
+          <div class="hour">{{hours[i].startTimeDate.toLocaleString('en-US', {hour: 'numeric', hour12: true})
             .replace(' ', '')
             .toLocaleLowerCase()}}</div>
           <div class="flex-none d-flex align-items-center" [style.width.px]="getWeatherCodeWidth()">

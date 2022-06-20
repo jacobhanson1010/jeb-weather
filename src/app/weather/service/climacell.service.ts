@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import {ForecastHour} from '../domain/hourly/ForecastHour';
+import {Interval} from '../domain/climacell/hourly/Interval';
 import {ReplaySubject} from 'rxjs';
-import {ForecastFour} from '../domain/hourly/ForecastFour';
-import {ForecastDaily} from '../domain/daily/ForecastDaily';
-import {WeeklyForecast} from '../domain/daily/WeeklyForecast';
+import {ForecastFour} from '../domain/climacell/hourly/ForecastFour';
+import {ForecastDaily} from '../domain/climacell/daily/ForecastDaily';
+import {WeeklyForecast} from '../domain/climacell/daily/WeeklyForecast';
 import {PlaceService} from './place.service';
 import {Place} from '../domain/Place';
+import {ClimacellResponse} from '../domain/climacell/ClimacellResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ import {Place} from '../domain/Place';
 export class ClimacellService {
 
   private place: Place;
+  private baseAPIURL = 'https://api.tomorrow.io/v4/timelines?units=imperial';
 
   constructor(private http: HttpClient, private placeService: PlaceService) {
     placeService.getPlace().subscribe((place: Place) => {
@@ -26,7 +28,7 @@ export class ClimacellService {
         }
 
         this.retrieveHourly();
-        this.retrieveDaily();
+        // this.retrieveDaily();
       },
       (errorMessage: string) => {
         alert(errorMessage);
@@ -72,6 +74,7 @@ export class ClimacellService {
   }
 
   private alreadyAlertedOnError = false;
+
   private handleError(error: HttpErrorResponse) {
 
     if (this.alreadyAlertedOnError) {
@@ -90,15 +93,25 @@ export class ClimacellService {
     }
   }
 
+  // ?location=33.057361,-96.75046&fields=sunriseTime,sunsetTime,temperature,temperatureApparent,windSpeed,windDirection,precipitationIntensity,rainAccumulation,precipitationProbability&timesteps=1h
   private retrieveHourly() {
-    this.http.get('https://api.climacell.co/v3/weather/forecast/hourly?' +
-      'lat=' + this.place.latitude +
-      '&lon=' + this.place.longitude +
-      '&unit_system=us' +
-      '&fields=temp,feels_like,precipitation_type,precipitation,precipitation_probability,wind_speed,wind_gust,wind_direction,sunrise,sunset,cloud_cover,weather_code' +
-      '&start_time=now', this.headers())
-      .subscribe((fc: any[]) => {
-          this.hourlyForecast.next(new ForecastFour(fc.map(f => new ForecastHour(f))));
+    // this.http.get(this.baseAPIURL +
+    //   '&location=' + this.place.latitude + ',' + this.place.longitude +
+    //   '&fields=temperature,temperatureApparent,precipitationType,precipitationIntensity,precipitationProbability,windSpeed,windGust,windDirection,sunriseTime,sunsetTime,cloudCover',
+    //   this.headers())
+    //   .subscribe((climacellResponse: ClimacellResponse) => {
+    //       console.debug(climacellResponse.data.timelines[0]);
+    //     },
+    //     (error: HttpErrorResponse) => {
+    //       this.handleError(error);
+    //     }
+    //   );
+    const mockTimeline = 'assets/climacell-dummy/timeline.json';
+    return this.http.get<ClimacellResponse>(mockTimeline)
+      .subscribe((climacellResponse) => {
+          // const response: ClimacellResponse = climacellResponse as ClimacellResponse;
+          console.debug(<ClimacellResponse>climacellResponse);
+          this.hourlyForecast.next(new ForecastFour(climacellResponse.data.timelines[0].intervals));
         },
         (error: HttpErrorResponse) => {
           this.handleError(error);
@@ -107,7 +120,7 @@ export class ClimacellService {
   }
 
   private retrieveDaily() {
-    this.http.get('https://api.climacell.co/v3/weather/forecast/daily?' +
+    this.http.get(this.baseAPIURL +
       'lat=' + this.place.latitude +
       '&lon=' + this.place.longitude +
       '&unit_system=us' +
